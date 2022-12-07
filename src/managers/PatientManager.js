@@ -19,3 +19,13 @@ export const createPatient= (event) => {
      })
         .then(response => response.json())
 }
+
+export const getPatientById = (id) => {
+    return fetch(`http://localhost:8000/patients/${id}`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("re_token")}`
+        }
+    })
+        .then(response => response.json())
+
+}
