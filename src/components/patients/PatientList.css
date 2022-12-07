@@ -1,0 +1,13 @@
+.Patient_List_Headers {
+    border: solid black;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.patients {
+    border: solid black;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
