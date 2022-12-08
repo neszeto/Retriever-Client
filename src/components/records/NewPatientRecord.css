@@ -1,0 +1,5 @@
+.added_and_searched_meds {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+
+}
