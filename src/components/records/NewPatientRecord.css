@@ -3,3 +3,9 @@
     grid-template-columns: 1fr 1fr
 
 }
+
+
+.deactivated_add_button {
+    background-color: grey; 
+    opacity: 0.3; 
+}

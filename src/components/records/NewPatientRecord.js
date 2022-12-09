@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getMedications } from "../../managers/MedicationManager"
+import { createMedication, getMedications } from "../../managers/MedicationManager"
 import { getPatientById } from "../../managers/PatientManager"
 import { getUsers } from "../../managers/UsersManager"
 import "./NewPatientRecord.css"
@@ -15,6 +15,17 @@ export const NewPatientRecord = () => {
     const [search, setSearch] = useState("")
     const [filteredMedications, setFiltered] = useState([])
     const [addedMeds, setAddedMeds] = useState(false)
+    const [addButton, setAddButton] = useState(false)
+  
+
+    const patientMedications = useRef([])
+
+    const [medicalRecord, setMedicalRecord] = useState(
+        {
+            
+        }
+    )
+    const [medicalRecordMedications, setMedicalRecordMedications] = useState([])
 
     useEffect(
         () => {
@@ -28,7 +39,16 @@ export const NewPatientRecord = () => {
         () => {
             if (search) {
                 const searched = medications.filter(med=>med.name.toLowerCase().startsWith(search.toLowerCase()))
-                setFiltered(searched)
+                if (searched.length === 0 && search !== "") {
+                    setAddButton(true)
+                }
+                if (searched.length === 0 && search === "") {
+                    setAddButton(false)
+                }
+                else {
+                    setFiltered(searched)
+
+                }
                 
             }
     
@@ -40,10 +60,24 @@ export const NewPatientRecord = () => {
     )
 
 
+    const AddMedicationButton = (evt) => {
+        evt.preventDefault()
+        const newMedication = {
+            name: search
+        }
+
+        createMedication(newMedication)
+        .then(
+            (newlyMadeMedication) => {
+                if (newlyMadeMedication.name) {
+                    patientMedications.current.push(newlyMadeMedication)
+                    setAddedMeds(!addedMeds)
+                }
+                
+            }
+        )  
+    }
     
-    const patientMedications = useRef([])
-
-
    return <fieldset>
         <div>New Medical Record for {patient?.name}</div>
         <section className="Record_form">
@@ -74,22 +108,36 @@ export const NewPatientRecord = () => {
             <input onChange={
                     (evt) => {setSearch(evt.target.value)}
                 }type="text" name="search_medication" className="search_field" placeholder="search medication to add..."/>
-            <button>Add</button>
+                <div>
+                    {
+                        addButton
+                        ? <button className="activated_add_button" onClick ={(evt)=>AddMedicationButton(evt)}>Add</button>
+                        : <button className="deactivated_add_button">Add</button>
+                    }
+                </div>
             <section className="added_and_searched_meds">
                 <div className="searched_medications">
                     <div>{filteredMedications.map(medication=><button onClick={
                         () => {
                             patientMedications.current.push(medication)
-                            
-                        
+                            setAddedMeds(!addedMeds)
                         }
                     }>{medication.name}</button>)}</div>
                 </div>
                 <div className="added_medications">Patient Medications:   
                 {
-                    patientMedications.current.length === 0
-                    ? ""
-                    : <div>{patientMedications.current.map(medication=> <div>{medication.name}<button>remove</button></div>)}</div>
+                    addedMeds || !addedMeds
+                    ? <div>{patientMedications.current.map(medication=> <div>{medication.name}<button onClick={
+                        ()=>{
+                            const index = patientMedications.current.findIndex(med => {
+                                return med.id === medication.id;
+                            })
+                    
+                            patientMedications.current.splice(index, 1)
+                            setAddedMeds(!addedMeds)
+                        }
+                    }>remove</button></div>)}</div>
+                    : ""
                     
                 }
                 </div>
