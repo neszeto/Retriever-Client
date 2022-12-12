@@ -102,7 +102,7 @@ export const PatientList = () => {
                         <Link style={{textDecoration: 'none'}} to={`/patient/${patient.id}`}>{patient.name}</Link>
                         <div>{patient.age} yo, {patient.sex === "Male" ? "MN" : "FS"}, {patient.breed}</div>
                         <div>{patient.species.species}</div>
-                        <div>{patient.owner.name}</div>
+                        <Link style={{textDecoration: 'none'}} to={`/owner/${patient.owner.id}`}>{patient.owner.name}</Link>
                         <div>{patient.deceased ? "deceased" : "active"}</div>
                         </>
                     })

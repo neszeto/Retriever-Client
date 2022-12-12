@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { createOwner } from "../../managers/OwnerManager"
 import { createPatient } from "../../managers/PatientManager"
 import { getSpecies } from "../../managers/SpeciesManager"
@@ -60,7 +60,7 @@ export const NewPatientForm = () => {
                     ownerId: newlyCreatedOwner.id,
                     image: pet.image
                 }
-                createPatient(createdPet)
+                return createPatient(createdPet)
                 
             }
         )
@@ -69,6 +69,7 @@ export const NewPatientForm = () => {
                 navigate('/')
             }
         )
+        
     }
     
     const showWidget = (event) => {

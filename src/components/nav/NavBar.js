@@ -6,6 +6,9 @@ export const NavBar = () => {
     const navigate = useNavigate()
     return (
         <ul className="navbar">
+            <li className="nav-item">
+                <Link style={{textDecoration: 'none'}} className="nav-item" to='/'>Patient List</Link>
+            </li>
         {
             (localStorage.getItem("re_token") !== null) ?
                 <li className="nav-item">
@@ -16,7 +19,8 @@ export const NavBar = () => {
                         }}
                     >Logout</button>
                 </li> : ""
-        }        
+        }     
+           
         </ul>
     )
 }

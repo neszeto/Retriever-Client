@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
+import { getPatientRecords } from "../../managers/MedicalRecordManager"
 import { getPatientById } from "../../managers/PatientManager"
-import { getPatientRecords } from "../../managers/RecordManager"
+
 import "./PatientChart.css"
 
 export const PatientChart = () => {
@@ -22,8 +23,12 @@ export const PatientChart = () => {
     
     return <section className="whole_page">
             <section className="pet_header_information">
-                <div>{patient?.name}</div>
-                <div>{patient?.breed} Sex:{patient?.sex} Age:{patient?.age}yo Weight:{patient?.weight}lbs Color:{patient?.color} Owner:{patient?.owner?.name}</div>  
+                <div className="patientName">
+                    <Link style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
+                    <div>{patient?.deceased ? "(deceased)": ""}</div>
+                </div>
+                <div>{patient?.species?.species}</div>
+                <div>{patient?.breed} Sex:{patient?.sex} Age:{patient?.age}yo Weight:{patient?.weight}lbs Color:{patient?.color} Owner: <Link style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>  
             </section>
             <section className="sub_header_button">
                 <div>Patient Chart</div>

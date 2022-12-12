@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useEffect, useRef, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { createDiagnosis } from "../../managers/DiagnosisManager"
+import { createMedicalRecord, createMedicalRecordMedication } from "../../managers/MedicalRecordManager"
 import { createMedication, getMedications } from "../../managers/MedicationManager"
 import { getPatientById } from "../../managers/PatientManager"
 import { getUsers } from "../../managers/UsersManager"
@@ -8,6 +10,7 @@ import "./NewPatientRecord.css"
 
 export const NewPatientRecord = () => {
     const { patientId } = useParams()
+    let navigate = useNavigate()
     
     const [doctors, setDoctors] = useState()
     const [patient, setPatient] = useState()
@@ -22,10 +25,18 @@ export const NewPatientRecord = () => {
 
     const [medicalRecord, setMedicalRecord] = useState(
         {
-            
+            doctorId: 0,
+            presentingComplaint: "",
+            subjective: "",
+            objective: "",
+            assessment: "",
+            plan: "",
+            date: "",
+            diagnosisId: 0
+
         }
     )
-    const [medicalRecordMedications, setMedicalRecordMedications] = useState([])
+    
 
     useEffect(
         () => {
@@ -59,6 +70,11 @@ export const NewPatientRecord = () => {
         }, [search]
     )
 
+    const changeRecordState = (domEvent) => {
+        const newEvent = Object.assign({}, medicalRecord)
+        newEvent[domEvent.target.name] = domEvent.target.value
+        setMedicalRecord(newEvent)
+    }
 
     const AddMedicationButton = (evt) => {
         evt.preventDefault()
@@ -77,31 +93,74 @@ export const NewPatientRecord = () => {
             }
         )  
     }
+
+    const FinalizeMedicalRecord = (evt) => {
+        evt.preventDefault()
+
+        const createdDiagnosis = {
+            diagnosis: medicalRecord.diagnosis
+        }
+        createDiagnosis(createdDiagnosis)
+        .then(
+            (Diagnosis) => {
+                const createdMedicalRecord = {
+                    doctorId: parseInt(medicalRecord.doctorId),
+                    presentingComplaint: medicalRecord.presentingComplaint,
+                    subjective: medicalRecord.subjective,
+                    objective: medicalRecord.objective,
+                    assessment: medicalRecord.assessment,
+                    plan: medicalRecord.plan,
+                    date: medicalRecord.date,
+                    diagnosisId: Diagnosis.id
+                }
+                return createMedicalRecord(createdMedicalRecord, patientId)
+                .then(
+                    (newlyCreatedRecord) => {
+                        patientMedications.current.map(medication=> {
+                             const recordMedication = {
+                                medicalRecordId: newlyCreatedRecord.id,
+                                medicationId: medication.id
+                            }
+                            return createMedicalRecordMedication(recordMedication)
+                        })
+                        
+                    }
+                )
+            }
+        )
+        .then(
+            () => { 
+                navigate(`/Patient/${patientId}`) 
+            }
+        )
+        
+    }
     
-   return <fieldset>
+   return <>
+   <fieldset>
         <div>New Medical Record for {patient?.name}</div>
         <section className="Record_form">
             <label className="form_headers" htmlFor="doctor">Medical Record Written By: </label>
-            <select id="doctor" className="form_select">
+            <select id="doctor" className="form_select" name="doctorId" onChange={changeRecordState}>
                 <option value="">Select Doctor</option>
                 {
                     doctors?.map(doctor => <option value={doctor?.id} key={doctor?.id}>Dr. {doctor?.first_name} {doctor?.last_name}</option>)
                 }
             </select>
             <label className="form_headers" htmlFor="presenting_complaint">Presenting Complaint </label>
-            <input className="form_input" required autoFocus type="text" name="presenting_complaint"/>
+            <input className="form_input" required autoFocus type="text" name="presentingComplaint" onChange={changeRecordState}/>
             <label className="form_headers" htmlFor="subjective">Subjective</label>
-            <textarea id="subjective" className="text_field" name="subjective"/>
+            <textarea id="subjective" className="text_field" name="subjective" onChange={changeRecordState}/>
             <label className="form_headers" htmlFor="objective">Objective</label>
-            <textarea id="objective" className="text_field" name="objective"/>
+            <textarea id="objective" className="text_field" name="objective" onChange={changeRecordState}/>
             <label className="form_headers" htmlFor="assessment">Assessment</label>
-            <textarea id="assessment" className="text_field" name="assessment"/>
+            <textarea id="assessment" className="text_field" name="assessment" onChange={changeRecordState}/>
             <label className="form_headers" htmlFor="plan">Plan</label>
-            <textarea id="plan" className="text_field" name="plan"/>
+            <textarea id="plan" className="text_field" name="plan" onChange={changeRecordState}/>
             <label className="form_headers" htmlFor="diagnosis">Diagnosis </label>
-            <input className="form_input" required autoFocus type="text" name="diagnosis"/>
+            <input className="form_input" required autoFocus type="text" name="diagnosis" onChange={changeRecordState}/>
             <label className="form_headers" htmlFor="date">Appointment Date</label>
-            <input className="form_input" required autoFocus type="date" name="date"/>
+            <input className="form_input" required autoFocus type="date" name="date" onChange={changeRecordState}/>
         </section>
         <section className="medication_search">
             <label className="search_medication" htmlFor="search_medications"></label>
@@ -146,5 +205,8 @@ export const NewPatientRecord = () => {
 
         </section>
         </fieldset>
+        <button onClick={(evt)=>{FinalizeMedicalRecord(evt)}}>Finalize</button>
+        </>
+        
 
 }
