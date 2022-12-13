@@ -7,7 +7,9 @@ import { PatientChart } from "../components/patients/PatientChart"
 import { PatientDetails } from "../components/patients/PatientDetails"
 import { PatientList } from "../components/patients/PatientList"
 import { NewPatientRecord } from "../components/records/NewPatientRecord"
+import { Addendum } from "../components/records/EditRecordAddendum"
 import { Authorized } from "./Authorized"
+import { ViewAddendum } from "../components/records/ViewRecordAddendum"
 
 
 export const ApplicationViews = () => {
@@ -23,9 +25,11 @@ export const ApplicationViews = () => {
                 <Route path="add_new_record/patient/:patientId" element={<NewPatientRecord />} />
                 <Route path="/patient/:patientId/details" element={<PatientDetails/>} />
                 <Route path="/owner/:ownerId" element={<OwnerDetails />} />
+                <Route path="/edit_record/:recordId" element={<Addendum />} />
+                <Route path="/view_record/:recordId" element={<ViewAddendum />} />
 
               
-                
+            
             </Route>
         </Routes>
     </>

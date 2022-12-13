@@ -32,7 +32,7 @@ export const PatientDetails = () => {
           if (!error && result && result.event === "success") { 
             console.log(result.info.url)
             const copy = structuredClone(currentDetails)
-            copy.image = result.info.url
+            copy.image_url = result.info.url
             setCurrentDetails(copy)
         }})
         widget.open()
@@ -92,7 +92,7 @@ export const PatientDetails = () => {
                 }
             </select>
             <div className="upload_preview">
-                <button className="form_upload_button" onClick={(evt) => showWidget(evt)}>Upload Image</button>
+                <button className="form_upload_button" value={currentDetails.image_url} onClick={(evt) => showWidget(evt)}>Upload Image</button>
                 <div>Image Preview: </div>
                 <img src={currentDetails.image_url} width="100px"/>
             </div>

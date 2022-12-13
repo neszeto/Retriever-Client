@@ -23,6 +23,7 @@ export const PatientChart = () => {
     
     return <section className="whole_page">
             <section className="pet_header_information">
+                <img className="image" src={patient.image_url} width="100px" alt=""></img>
                 <div className="patientName">
                     <Link style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
                     <div>{patient?.deceased ? "(deceased)": ""}</div>
@@ -44,6 +45,14 @@ export const PatientChart = () => {
                         return <>
                         <section className="record_date">{rec.date}</section>
                         <section className="medical_record">
+                            <div>
+                                {   
+                                    rec.record_addendums.length === 0
+                                    ? ""
+                                    : <Link style={{textDecoration: 'none'}} to={rec.my_record ? `/edit_record/${rec.id}` : `/view_record/${rec.id}` }>View {rec.addendum_count} {rec.addendum_count === 1 ? "Addendum" : "Addendums"}</Link>
+
+                                }
+                            </div>
                             <div>Dr. {rec.doctor.first_name} {rec.doctor.last_name}</div>
                             <div>Presenting Complaint: {rec.presenting_complaint}</div>
                             <section className="SOAP">
@@ -59,8 +68,8 @@ export const PatientChart = () => {
                                 <div>Diagnosis: {rec.diagnosis.diagnosis}</div>
                                 {
                                     rec.my_record
-                                    ? <button className="Enable_Edit">Edit</button>
-                                    : <button className="Disable_Edit">Edit</button>
+                                    ? <button className="Enable_Edit" onClick={() => navigate(`/edit_record/${rec.id}`)}>Edit</button>
+                                    : ""
                                 }
                             </section>
 

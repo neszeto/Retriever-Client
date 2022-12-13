@@ -32,3 +32,24 @@ export const getPatientRecords = (id) => {
     })
         .then(response => response.json())
 }
+
+export const getMedicalRecordById = (id) => {
+    return fetch(`http://localhost:8000/medicalRecords/${id}`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("re_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
+export const deleteMedicalRecord= (id) => {
+    return fetch(`http://localhost:8000/medicalRecords/${id}`, {
+        method: "DELETE",
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Authorization": `Token ${localStorage.getItem("re_token")}`
+        },
+       
+     })
+}
