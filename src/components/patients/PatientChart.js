@@ -20,6 +20,11 @@ export const PatientChart = () => {
     }, []
    )
     
+   let uniqueDiagnoses = []
+   let duplicateDiagnoses = []
+
+   let uniqueMedications = []
+   let duplicateMedications = []
     
     return <section className="whole_page">
             <section className="pet_header_information">
@@ -82,21 +87,46 @@ export const PatientChart = () => {
                 
                 <section className="patient_summary">
                     <div>Patient Summary</div>
-                    <div>Problem List</div>
+                    <div><b>Problem List</b></div>
                     <div>
                         {
+                           
                             record.map(rec=> {
-                                return <div>{rec.diagnosis.diagnosis}</div>
+                                if (!uniqueDiagnoses.includes(rec.diagnosis.diagnosis)) {
+                                    uniqueDiagnoses.push(rec.diagnosis.diagnosis)
+                                }
+                                else {
+                                    duplicateDiagnoses.push(rec.diagnosis.diagnosis)
+                                }
+                                }
+                            )
+                            
+                        }
+                    
+                        {
+                            uniqueDiagnoses.map(diagnosis => {
+                                return <div>{diagnosis}</div>
                             })
                         }
                     </div>
-                    <div>Medications</div>
+                    <div><b>Medications</b></div>
                     <div>
                         {
                             record.map(rec=> {
                                 return <div>{rec.medications_on_record.map(med=>{
-                                    return <div>{med.medication.name}</div>})}
+                                    if (!uniqueMedications.includes(med.medication.name)) {
+                                        uniqueMedications.push(med.medication.name)
+                                    }
+                                    else {
+                                        duplicateMedications.push(med.medication.name)
+                                    }
+                                    })}
                                     </div>
+                            })
+                        }
+                        {
+                            uniqueMedications.map(medication => {
+                                return <div>{medication}</div>
                             })
                         }
                     </div>
