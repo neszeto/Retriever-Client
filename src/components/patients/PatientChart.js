@@ -10,6 +10,7 @@ export const PatientChart = () => {
 
    const [patient, setPatient] = useState({})
    const [record, setRecord] = useState([])
+   const [filteredRecord, setFiltered] = useState([])
 
    let navigate = useNavigate()
 
@@ -17,6 +18,7 @@ export const PatientChart = () => {
     () => {
         getPatientById(patientId).then(patient=> setPatient(patient))
         getPatientRecords(patientId).then(records=> setRecord(records))
+        getPatientRecords(patientId).then(records=> setFiltered(records))
     }, []
    )
     
@@ -25,6 +27,16 @@ export const PatientChart = () => {
 
    let uniqueMedications = []
    let duplicateMedications = []
+
+   const filterDiagnosis = (diagnosis) => {
+        const filteredRecords = record.filter(rec=>rec.diagnosis.diagnosis === diagnosis)
+        setFiltered(filteredRecords)
+   }
+
+   const filterMedication = (medication) => {
+        const filteredRecords = record.filter(rec=>rec.medications_on_record.find(med=>med.medication.name === medication))
+        setFiltered(filteredRecords)
+   }
     
     return <section className="whole_page">
             <section className="pet_header_information">
@@ -39,6 +51,7 @@ export const PatientChart = () => {
             <section className="sub_header_button">
                 <div>Patient Chart</div>
                 <button onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}>Add New Medical Record</button>
+                <button onClick={()=>{setFiltered(record)}}>View All Medical Records</button>
             </section>
             <section className="patient_chart_and_summary">
             {
@@ -46,7 +59,7 @@ export const PatientChart = () => {
             ? <div>This patient has no medical charts to show</div> 
             : <section className="patient_charts">
                 {
-                    record.map(rec=>{
+                    filteredRecord.map(rec=>{
                         return <>
                         <section className="record_date">{rec.date}</section>
                         <section className="medical_record">
@@ -105,7 +118,7 @@ export const PatientChart = () => {
                     
                         {
                             uniqueDiagnoses.map(diagnosis => {
-                                return <div>{diagnosis}</div>
+                                return <button onClick={()=>filterDiagnosis(diagnosis)}>{diagnosis}</button>
                             })
                         }
                     </div>
@@ -126,7 +139,7 @@ export const PatientChart = () => {
                         }
                         {
                             uniqueMedications.map(medication => {
-                                return <div>{medication}</div>
+                                return <button onClick={()=>filterMedication(medication)}>{medication}</button>
                             })
                         }
                     </div>
