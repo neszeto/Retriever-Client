@@ -11,6 +11,7 @@ import { Addendum } from "../components/records/EditRecordAddendum"
 import { Authorized } from "./Authorized"
 import { ViewAddendum } from "../components/records/ViewRecordAddendum"
 import { NavBar } from "../components/nav/NavBar"
+import { Doctors } from "../components/doctors/DoctorList"
 
 
 export const ApplicationViews = () => {
@@ -29,6 +30,7 @@ export const ApplicationViews = () => {
                     <Route path="/owner/:ownerId" element={<OwnerDetails />} />
                     <Route path="/edit_record/:recordId" element={<Addendum />} />
                     <Route path="/view_record/:recordId" element={<ViewAddendum />} />
+                    <Route path="/doctors" element={<Doctors />} />
                 </Route>
 
               

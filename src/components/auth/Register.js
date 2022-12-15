@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
 
@@ -11,6 +11,7 @@ export const Register = () => {
     const password = useRef()
     const verifyPassword = useRef()
     const passwordDialog = useRef()
+    const [isStaff, setIsStaff] = useState(false)
     const navigate = useNavigate()
 
     const handleRegister = (e) => {
@@ -22,13 +23,14 @@ export const Register = () => {
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
                 "email": email.current.value,
-                "password": password.current.value
+                "password": password.current.value,
+                "is_staff": isStaff
             }
 
             registerUser(newUser)
                 .then(res => {
                     if ("token" in res) {
-                        localStorage.setItem("re_token", res.token)
+                        localStorage.setItem("re_token", JSON.stringify(res))
                         navigate("/")
                     }
                 })
@@ -74,6 +76,16 @@ export const Register = () => {
                 <fieldset style={{
                     textAlign: "center"
                 }}>
+                    <label className="form_manager" htmlFor="manager">Hospital Manager
+                        <input onChange = {() => {
+                        const copy = structuredClone(isStaff)
+                        {
+                            isStaff
+                            ? setIsStaff(false)
+                            : setIsStaff(true)
+                        }
+                    } } id="manager" type="checkbox" onSubmit={handleRegister}/>
+                    </label>
                     <button className="btn btn-1 btn-sep icon-send" type="submit">Register</button>
                 </fieldset>
             </form>

@@ -1,7 +1,13 @@
+import { getToken } from "./AuthManager"
+
+
+
+
+
 export const getPatients = () => {
     return fetch("http://localhost:8000/patients", {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())
@@ -13,7 +19,7 @@ export const createPatient= (event) => {
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         },
         body: JSON.stringify(event)
      })
@@ -23,7 +29,7 @@ export const createPatient= (event) => {
 export const getPatientById = (id) => {
     return fetch(`http://localhost:8000/patients/${id}`, {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())
@@ -36,7 +42,7 @@ export const updatePatient= (event, id) => {
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         },
         body: JSON.stringify(event)
      })

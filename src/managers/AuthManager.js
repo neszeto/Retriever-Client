@@ -21,3 +21,18 @@ export const loginUser = (user) => {
     })
       .then(res => res.json())
   }
+
+  export const getToken = () => {
+    let tokenObject = localStorage.getItem("re_token")
+    let parsedToken = JSON.parse(tokenObject)
+    let token = parsedToken.token
+    return token
+  }
+
+  export const isStaff = () => {
+    let tokenObject = localStorage.getItem("re_token")
+    let parsedToken = JSON.parse(tokenObject)
+    let staff = parsedToken.staff
+    return staff
+  }
+

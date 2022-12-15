@@ -1,7 +1,9 @@
+import { getToken } from "./AuthManager"
+
 export const getUsers = () => {
     return fetch("http://localhost:8000/users", {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())
@@ -10,7 +12,7 @@ export const getUsers = () => {
 export const getLoggedInUser = () => {
     return fetch("http://localhost:8000/users?loggedin=true", {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())

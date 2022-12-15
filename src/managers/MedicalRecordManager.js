@@ -1,10 +1,12 @@
+import { getToken } from "./AuthManager"
+
 export const createMedicalRecord= (event, id) => {
     return fetch(`http://localhost:8000/medicalRecords?patient=${id}`, {
         method: "POST",
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         },
         body: JSON.stringify(event)
      })
@@ -17,7 +19,7 @@ export const createMedicalRecordMedication= (event) => {
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         },
         body: JSON.stringify(event)
      })
@@ -27,7 +29,7 @@ export const createMedicalRecordMedication= (event) => {
 export const getPatientRecords = (id) => {
     return fetch(`http://localhost:8000/medicalRecords?patient=${id}`, {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())
@@ -36,7 +38,7 @@ export const getPatientRecords = (id) => {
 export const getMedicalRecordById = (id) => {
     return fetch(`http://localhost:8000/medicalRecords/${id}`, {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())
@@ -48,7 +50,7 @@ export const deleteMedicalRecord= (id) => {
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         },
        
      })

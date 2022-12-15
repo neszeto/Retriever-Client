@@ -1,7 +1,9 @@
+import { getToken } from "./AuthManager"
+
 export const getMedications = () => {
     return fetch("http://localhost:8000/medications", {
         headers:{
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         }
     })
         .then(response => response.json())
@@ -13,7 +15,7 @@ export const createMedication= (event) => {
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Token ${localStorage.getItem("re_token")}`
+            "Authorization": `Token ${getToken()}`
         },
         body: JSON.stringify(event)
      })

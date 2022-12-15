@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import { isStaff } from "../../managers/AuthManager"
 import { getPatientRecords } from "../../managers/MedicalRecordManager"
 import { getPatientById } from "../../managers/PatientManager"
 
@@ -50,7 +51,11 @@ export const PatientChart = () => {
             </section>
             <section className="sub_header_button">
                 <div>Patient Chart</div>
-                <button onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}>Add New Medical Record</button>
+                {
+                    isStaff()
+                    ? ""
+                    : <button onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}>Add New Medical Record</button>
+                }
                 <button onClick={()=>{setFiltered(record)}}>View All Medical Records</button>
             </section>
             <section className="patient_chart_and_summary">

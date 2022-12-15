@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, Outlet, useNavigate } from "react-router-dom"
+import { isStaff } from "../../managers/AuthManager"
 import { getLoggedInUser } from "../../managers/UsersManager"
 import "./NavBar.css"
 
@@ -24,10 +25,20 @@ export const NavBar = () => {
                 ?
                 <>  
                     <div>
-                        <div>Logged In As: Dr. {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                        {
+                            isStaff()
+                            ? <div>Logged In As Hospital Manager: {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                            : <div>Logged In As: Dr. {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                        }
+                        
                     </div>
                     <li className="nav-item">
                         <Link style={{textDecoration: 'none'}} className="nav-item" to='/'>Patient List</Link>
+                        {
+                            isStaff()
+                            ? <Link style={{textDecoration: 'none'}} to='/doctors'>Doctors</Link>
+                            : ""
+                        }
                     </li>
                     <li className="nav-item">
                         <button className="nav-item"
