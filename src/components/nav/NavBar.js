@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import { getLoggedInUser } from "../../managers/UsersManager"
 import "./NavBar.css"
 
@@ -10,20 +10,15 @@ export const NavBar = () => {
 
     useEffect(
         () => {
-            getUser()
+            getLoggedInUser().then((user)=> setUser(user))
         },[]
     )
 
-    const getUser = () => {
-        localStorage.getItem("re_token")
-        getLoggedInUser().then((user)=> setUser(user))
-    }
+   
 
     return (
         <>
             <ul className="navbar">
-                
-            
             {
                 (localStorage.getItem("re_token") !== null) 
                 ?
@@ -38,16 +33,15 @@ export const NavBar = () => {
                         <button className="nav-item"
                             onClick={() => {
                                 localStorage.removeItem("re_token")
-                                getUser()
                                 navigate('/login')
                             }}
                         >Logout</button>
                     </li>
                 </> 
                 : ""
-            }     
-            
+            }            
             </ul>
+            <Outlet/>
         </>
     )
 }

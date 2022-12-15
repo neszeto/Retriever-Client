@@ -9,6 +9,7 @@ export const PatientList = () => {
     const [patients, setPatients] = useState([])
     const [filteredPatients, setFiltered] = useState([])
     const [search, setSearch] = useState("")
+    const [search2, setSearch2] = useState("")
     const [canineRadio, setCanine] = useState(false)
     const [felineRadio, setFeline] = useState(false)
     const [bothRadio, setBoth] = useState(false)
@@ -32,17 +33,36 @@ export const PatientList = () => {
             }
     
             else {
-                setFiltered(filteredPatients)
+                setFiltered(patients)
             }
 
         }, [search]
     )
+
+    useEffect(
+        () => {
+            if (search2) {
+                let searchterm = patients.filter(patient=> patient.records_for_patient.find(rec=>rec?.diagnosis?.diagnosis.toLowerCase().startsWith(search2.toLowerCase()))|| patient.records_for_patient.find(rec=>rec?.medications.find(med=>med.name.toLowerCase().startsWith(search2.toLowerCase())))) 
+                setFiltered(searchterm)
+                
+            }
+    
+            else {
+                setFiltered(patients)
+            }
+
+        }, [search2]
+    )
+       
+    
     
     useEffect(
         () => {
             if (canineRadio) {
                 const canineFilter = patients.filter(patient => patient.species.species === "Canine")
                 setFiltered(canineFilter)
+                setFeline(false)
+                setBoth(false)
             }
             
         }, [canineRadio]
@@ -53,6 +73,8 @@ export const PatientList = () => {
             if (felineRadio) {
                 const felineFilter = patients.filter(patient => patient.species.species === "Feline")
                 setFiltered(felineFilter)
+                setCanine(false)
+                setBoth(false)
             }
             
         }, [felineRadio]
@@ -61,7 +83,9 @@ export const PatientList = () => {
     useEffect(
         () => {
             if (bothRadio) {
-                setFiltered(filteredPatients)
+                setFiltered(patients)
+                setCanine(false)
+                setFeline(false)
             }
         
         }, [bothRadio]
@@ -71,6 +95,13 @@ export const PatientList = () => {
     return <>
         <button onClick = {() => {navigate(`/newPatientForm`)}}>Add New Patient</button>
         <section className="all_filters">
+            <section className="search_inputs">
+                <label className="search" htmlFor="search_terms">Search </label>
+                <input 
+                onChange={
+                    (evt) => {setSearch2(evt.target.value)}
+                }type="text" name="search_terms" className="input_field" placeholder="search by diagnosis or medication"/>
+            </section>
             <section className="search_inputs">
                 <label className="search" htmlFor="search_terms">Search </label>
                 <input 
@@ -97,13 +128,13 @@ export const PatientList = () => {
             </section>
             <section className="patients">
                 {
-                    filteredPatients.map(patient => {
+                    filteredPatients?.map(patient => {
                         return <>
-                        <Link style={{textDecoration: 'none'}} to={`/patient/${patient.id}`}>{patient.name}</Link>
-                        <div>{patient.age} yo, {patient.sex === "Male" ? "MN" : "FS"}, {patient.breed}</div>
-                        <div>{patient.species.species}</div>
+                        <Link style={{textDecoration: 'none'}} to={`/patient/${patient?.id}`}>{patient?.name}</Link>
+                        <div>{patient?.age} yo, {patient?.sex === "Male" ? "MN" : "FS"}, {patient?.breed}</div>
+                        <div>{patient?.species?.species}</div>
                         <Link style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link>
-                        <div>{patient.deceased ? "deceased" : "active"}</div>
+                        <div>{patient?.deceased ? "deceased" : "active"}</div>
                         </>
                     })
                 }
@@ -114,3 +145,4 @@ export const PatientList = () => {
     
 }
 
+/**/

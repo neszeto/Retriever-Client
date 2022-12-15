@@ -4,7 +4,9 @@ import { NavBar } from "./components/nav/NavBar"
 
 export const Retriever = () => (
     <>
-        <NavBar />
+        
         <ApplicationViews />
     </>
 )
+
+//<NavBar/> above applicationviews
