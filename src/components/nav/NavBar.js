@@ -8,6 +8,7 @@ import "./NavBar.css"
 export const NavBar = () => {
     const navigate = useNavigate()
     const [loggedinUser, setUser] = useState({})
+    
 
     useEffect(
         () => {
@@ -36,7 +37,7 @@ export const NavBar = () => {
                         <Link style={{textDecoration: 'none'}} className="nav-item" to='/'>Patient List</Link>
                         {
                             isStaff()
-                            ? <Link style={{textDecoration: 'none'}} to='/doctors'>Doctors</Link>
+                            ?  <Link style={{textDecoration: 'none'}} to='/doctors'>Doctors</Link>
                             : ""
                         }
                     </li>

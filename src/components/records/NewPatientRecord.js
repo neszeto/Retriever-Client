@@ -144,7 +144,11 @@ export const NewPatientRecord = () => {
             <select id="doctor" className="form_select" name="doctorId" onChange={changeRecordState}>
                 <option value="">Select Doctor</option>
                 {
-                    doctors?.map(doctor => <option value={doctor?.id} key={doctor?.id}>Dr. {doctor?.first_name} {doctor?.last_name}</option>)
+                    doctors?.map(doctor => {
+                        if (doctor.is_staff === false && doctor.users_that_are_doctors[0].active === true) {
+                           return <option value={doctor?.id} key={doctor?.id}>Dr. {doctor?.first_name} {doctor?.last_name}</option>
+                        }
+                    })
                 }
             </select>
             <label className="form_headers" htmlFor="presenting_complaint">Presenting Complaint </label>
