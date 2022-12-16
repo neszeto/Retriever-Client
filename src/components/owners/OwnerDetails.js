@@ -7,7 +7,7 @@ import { getOwnerById, updateOwner } from "../../managers/OwnerManager"
 
 export const OwnerDetails = () => {
     const { ownerId } = useParams()
-    const [owner, setOwner] = useState({})
+ 
     const [currentOwner, setCurrent] = useState({})
     const [revealForm, setReveal] = useState(false)
     
@@ -74,5 +74,6 @@ return <>
         </fieldset>
         : ""
     }
+    <button onClick={()=>{navigate(`/`)}}>back</button>
 </>
 }
