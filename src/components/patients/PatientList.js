@@ -98,7 +98,7 @@ export const PatientList = () => {
         </section>
         <section className="all_filters">
             <section className="search_inputs">
-                <label className="search" htmlFor="search_terms">🔍 </label>
+                <label className="search" htmlFor="search_terms"><i class="fa-solid fa-magnifying-glass"></i></label>
                 <input 
                 onChange={
                     (evt) => {setSearch2(evt.target.value)}

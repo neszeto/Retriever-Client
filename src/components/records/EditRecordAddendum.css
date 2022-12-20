@@ -1,0 +1,71 @@
+.delete_record {
+    display: flex;
+    justify-content: flex-end;
+}
+.record_delete_button {
+    border: none;
+    background-color: white;
+}
+
+.medical_record_edit {
+    margin: 5% 10% 0% 10%;
+    padding: 1%;
+    border: solid black;
+    width: 70%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%
+}
+
+
+.single_addendum { /*single addendum*/
+    margin: 3% 10% 0% 10%;
+    border: solid black; 
+    padding: 1%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.back_button {
+    margin: 10% 10% 0% 10%;
+}
+
+.add_addendum_button {
+
+    display: flex;
+    justify-content: flex-end;
+    width: 72%;
+    margin: 1% 10% 10% 10%;
+    
+}
+
+.delete_addendum {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.addendum_delete_button {
+    border: none; 
+    background-color: white;
+}
+
+.Addendum_form {
+    margin: 3% 10% 0% 10%;
+    border: solid black; 
+    padding: 1%;
+    width: 70%;
+    display: flex; 
+    flex-direction: column;
+}
+
+.save_addendum_button {
+    
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5%;
+}
+
+.addendum-section {
+    margin: 3%;
+}

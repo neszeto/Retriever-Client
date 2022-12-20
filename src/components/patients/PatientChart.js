@@ -64,7 +64,7 @@ export const PatientChart = () => {
                 {
                     isStaff()
                     ? ""
-                    : <button className="add_new" onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}>Add New Medical Record</button>
+                    : <button className="add_new" onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}><i class="fa-solid fa-plus fa-sm"></i> Medical Record</button>
                 }
                 <button className="view_all"onClick={()=>{setFiltered(record)}}>View All Medical Records</button>
             </section>
@@ -83,7 +83,7 @@ export const PatientChart = () => {
                                     {   
                                         rec.record_addendums.length === 0
                                         ? ""
-                                        : <Link className="addendum" style={{textDecoration: 'none'}} to={rec.my_record ? `/edit_record/${rec.id}` : `/view_record/${rec.id}` }>View {rec.addendum_count} {rec.addendum_count === 1 ? "Addendum" : "Addendums"}</Link>
+                                        : <Link className="addendum" style={{textDecoration: 'none'}} to={rec.my_record ? `/edit_record/${rec.id}` : `/view_record/${rec.id}` }>View {rec.addendum_count} {rec.addendum_count === 1 ? "Addendum " : "Addendums "}</Link>
 
                                     }
                                 </div>
@@ -125,7 +125,7 @@ export const PatientChart = () => {
                                     {
                                         rec.my_record
                                         ? <div className="edit_button">
-                                            <button className="Enable_Edit" onClick={() => navigate(`/edit_record/${rec.id}`)}>Edit</button>
+                                            <button className="Enable_Edit" onClick={() => navigate(`/edit_record/${rec.id}`)}><i class="fa-solid fa-pen-to-square fa-xl"></i></button>
                                         </div>
                                         : ""
                                     }
