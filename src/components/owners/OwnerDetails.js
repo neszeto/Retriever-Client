@@ -74,6 +74,6 @@ return <>
         </fieldset>
         : ""
     }
-    <button onClick={()=>{navigate(`/`)}}>back</button>
+    
 </>
 }

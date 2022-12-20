@@ -1,12 +1,186 @@
-.medical_record {
-    border: solid black;
+
+.whole_page {
+    border: solid purple;
+    height: 70%; 
+    
 }
 
-.Disable_Edit {
-    background-color: grey; 
-    opacity: 0.3; 
+/*Medical Records -------------------*/
+.patient_charts {
+    border: solid orange; 
+    
 }
+.record_date {
+    border: solid pink;
+    display: flex; 
+    justify-content: center;
+   
+}
+.date {
+    display: flex;
+    align-items: center;
+    margin-right: 3%
+}
+
+
+.medical_record {
+    border: solid black;
+    width: 70%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%
+}
+
 
 .Enable_Edit {
     background-color: grey; 
+    width: 10%;
+}
+
+.edit_button {
+    display: flex;
+    justify-content: flex-end;
+    
+}  
+.SOAP {
+    padding: 1.5%;
+}
+.SO {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding:0.5%;
+     
+}
+.record_tags {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+.doctor {
+   
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.addendum {
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.complaint {
+    padding-bottom: 1%;
+}
+
+.bullet_point {
+    padding-left: 5%; 
+}
+
+
+/* Patient chart and Patient Summary ----------*/
+
+.patient_chart_and_summary {
+    border: solid green;
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+    
+}
+
+/*Patient Header ------------------------*/
+
+.pet_header_information {
+    border: solid blue; 
+    display: flex; 
+    width: 100%; 
+   
+}
+
+.image {
+    border-radius: 50%;
+    
+    
+}
+
+.patientName {
+   display: flex; 
+   
+
+}
+
+.patientInfo {
+    display: flex;
+   
+    align-items: flex-end;
+    width: 100%; 
+   
+
+    
+}
+
+.info_line {
+  margin: 1.2%;
+}
+
+.image_name_breed {
+    margin: 1%;
+}
+
+/*Patient Sub-headers ---------------------*/
+.sub_header_button {
+    display: grid; 
+    grid-template-areas: "one . . . . . .two . . . ." ;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+}
+.view_all {
+    grid-area: two; 
+    width: 70%;
+    margin-left: 30%;
+    margin-right: 0%;
+}
+
+.add_new {
+    grid-area: one;
+    width: 70%;
+
+}
+
+.patient-chart {
+    margin-left: 2%; 
+    margin-top: 1%;
+}
+
+
+/*Patient Summary--------------------------*/
+
+.summary_filter { /*buttons*/
+    border: none; 
+}
+
+.patient_summary {
+    display: flex;
+    flex-direction: column;
+    border: solid black; 
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10%;
+
+}
+
+.patient_summary_header {
+    
+    display: flex;
+    justify-content: center;
+    padding: 2%
+}
+
+.patient_summary_sub_headers {
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+.summary_filter {
+    margin: 1%;
 }

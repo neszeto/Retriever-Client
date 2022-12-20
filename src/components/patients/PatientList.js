@@ -92,22 +92,23 @@ export const PatientList = () => {
     )
     
 
-    return <>
-        <button onClick = {() => {navigate(`/newPatientForm`)}}>Add New Patient</button>
+    return <section className="whole-list-page">
+        <section className="new_patient_button">
+            <button onClick = {() => {navigate(`/newPatientForm`)}}>Add New Patient</button>
+        </section>
         <section className="all_filters">
             <section className="search_inputs">
-                <label className="search" htmlFor="search_terms">Search </label>
+                <label className="search" htmlFor="search_terms">🔍 </label>
                 <input 
                 onChange={
                     (evt) => {setSearch2(evt.target.value)}
-                }type="text" name="search_terms" className="input_field" placeholder="search by diagnosis or medication"/>
-            </section>
-            <section className="search_inputs">
-                <label className="search" htmlFor="search_terms">Search </label>
+                }type="text" name="search_terms" className="search_input_field" placeholder=" search by diagnosis or medication..."/>
+            
+                <label className="search" htmlFor="search_terms"></label>
                 <input 
                 onChange={
                     (evt) => {setSearch(evt.target.value)}
-                }type="text" name="search_terms" className="input_field" placeholder="search by client or patient"/>
+                }type="text" name="search_terms" className="search_input_field" placeholder=" search by client or patient..."/>
             </section>
             <section className="radio_buttons">
                 <input onClick = {() => setCanine(!canineRadio)}type="radio" id="canine" name="radio_buttons" />
@@ -120,27 +121,27 @@ export const PatientList = () => {
         </section>
         <section className="Patient_List">
             <section className="Patient_List_Headers">
-                <div>Patient</div>
-                <div>Patient Information</div>
-                <div>Species</div>
-                <div>Owner</div>
-                <div>Status</div>
+                <div className="header">Patient</div>
+                <div className="header">Patient Information</div>
+                <div className="header">Species</div>
+                <div className="header">Owner</div>
+                <div className="header">Status</div>
             </section>
             <section className="patients">
                 {
                     filteredPatients?.map(patient => {
                         return <>
-                        <Link style={{textDecoration: 'none'}} to={`/patient/${patient?.id}`}>{patient?.name}</Link>
-                        <div>{patient?.age} yo, {patient?.sex === "Male" ? "MN" : "FS"}, {patient?.breed}</div>
-                        <div>{patient?.species?.species}</div>
-                        <Link style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link>
-                        <div>{patient?.deceased ? "deceased" : "active"}</div>
+                        <Link className="patient" style={{textDecoration: 'none'}} to={`/patient/${patient?.id}`}>{patient?.name}</Link>
+                        <div className="patient">{patient?.age} yo, {patient?.sex === "Male" ? "MN" : "FS"}, {patient?.breed}</div>
+                        <div className="patient">{patient?.species?.species}</div>
+                        <Link className="patient"style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link>
+                        <div className="patient">{patient?.deceased ? "deceased" : "active"}</div>
                         </>
                     })
                 }
             </section>
         </section>
-        </>
+        </section>
     
     
 }

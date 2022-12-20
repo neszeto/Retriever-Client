@@ -28,8 +28,29 @@ export const NavBar = () => {
                     <div>
                         {
                             isStaff()
-                            ? <div>Logged In As Hospital Manager: {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
-                            : <div>Logged In As: Dr. {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                            ? <div>Welcome, {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                            : <div className="logged_in_user">
+                                <div>Welcome, Dr. {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                               
+                                <img className="nav_image" src={loggedinUser[0]?.users_that_are_doctors[0]?.image_url} />
+                                <div class="topnav" id="myTopnav">
+                                    <div class="dropdown">
+                                        <button class="dropbtn">*
+                                        </button>
+                                        <div class="dropdown-content">
+                                            <Link style={{textDecoration: 'none'}} className="nav-item" to='/'>Patient List</Link>
+                                            <Link className="nav-item" to='/login'
+                                                    onClick={() => {
+                                                        localStorage.removeItem("re_token")
+                                                    }}
+                                                >Logout</Link>
+                                            
+                                        </div>
+                                    </div>    
+                                </div>
+                                 
+                                
+                            </div>
                         }
                         
                     </div>

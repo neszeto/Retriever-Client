@@ -1,13 +1,64 @@
+
+/*.whole-list-page {
+    background-color: rgb(16, 24, 41);
+    color: rgb(127, 135, 166);
+    width: 100%;
+    
+    
+}*/
+
+.all_filters {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    margin: 1%;
+    
+
+}
+.new_patient_button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+
+}
+
+.search_input_field {
+    width: 17em;
+    margin-left: 2%
+    
+}
+.search_inputs {
+    display: flex;
+
+}
+
+.radio_buttons {
+    margin-right: 2%;
+}
+
 .Patient_List_Headers {
     border: solid black;
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.header {
+    display: flex;
+    justify-content: center;
+}
+.patient {
+    display: flex;
+    justify-content: center;
+    margin: 0.2%;
 }
 
 .patients {
     border: solid black;
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+    padding: 1%;
 }
