@@ -9,3 +9,110 @@
     background-color: grey; 
     opacity: 0.3; 
 }
+
+.select_doctor {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Record_form {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.diagnosis_date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3%;
+}
+
+.search_meds_and_add_button {
+    display: flex;
+    margin-top: 3%;
+}
+
+.search_field {
+    width: 30%; 
+    margin-right: 1%;
+}
+
+.added_medications {
+    display: flex; 
+}
+
+.medication_added_to_form {
+    margin-left: 2%;
+    width: 55%;
+    
+}
+
+.remove_med_button {
+    margin-left: 1%; 
+    border: none;
+    background-color: white; 
+    
+}
+
+.medication_button {
+    border: none;
+    margin: 1%;
+    padding: 1%;
+}
+
+.searched_medications {
+    margin-top: 3%;
+}
+
+.record_form_input {
+    width: 50%;
+    height: 1.5em;
+}
+
+.record_text_field {
+    height: 5em;
+}
+
+.record_form_headers {
+    margin-top: 1%;
+    margin-right: 1%;
+    font-weight: bold;
+}
+
+.finalize_check {
+    display: flex; 
+ 
+    width: 100%;
+    justify-content: center; 
+    padding: 2%;
+    
+}
+
+.form_select {
+    margin-left: 0.5%;
+}
+
+.check_button {
+    margin-left: 1%;
+}
+
+.finalize_button {
+    margin: 1% 0% 1% 0%;
+    
+}
+
+.whole_record_form {
+    border: solid green; 
+    margin: 10%;
+}
+
+.finalize_button_check {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid blue;
+}
+
+.record_back_button {
+    margin-bottom: 3%;
+}

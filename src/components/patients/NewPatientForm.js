@@ -4,6 +4,8 @@ import { createOwner } from "../../managers/OwnerManager"
 import { createPatient } from "../../managers/PatientManager"
 import { getSpecies } from "../../managers/SpeciesManager"
 
+import "./NewPatientForm.css"
+
 
 export const NewPatientForm = () => {
     let navigate = useNavigate()

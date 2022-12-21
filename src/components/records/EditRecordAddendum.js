@@ -86,7 +86,7 @@ export const Addendum = () => {
                     <div><b>Medication: </b></div> 
                     {
                     currentRecord?.medications_on_record?.map(med=>{
-                        return <div>{med?.medication?.name} </div>
+                        return <div className="record_medications">{med?.medication?.name} </div>
                     })
                     }
                 </div>

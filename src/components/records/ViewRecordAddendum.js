@@ -23,26 +23,57 @@ export const ViewAddendum = () => {
     
 
     return <>
-    <section className="medical_record">
-        <div>Dr. {currentRecord?.doctor?.first_name} {currentRecord?.doctor?.last_name}</div>
-        <div>Presenting Complaint: {currentRecord?.presenting_complaint}</div>
+    <div className="back_button">
+        <button onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
+    </div>
+    <section className="medical_record_edit">
+        <div className="doctor">Dr. {currentRecord?.doctor?.first_name} {currentRecord?.doctor?.last_name}</div>
+        <div className="complaint">Presenting Complaint: {currentRecord?.presenting_complaint}</div>
         <section className="SOAP">
-            <div>Subjective: {currentRecord?.subjective}</div>
-            <div>Objective: {currentRecord?.objective}</div>
-            <div>Assessment: {currentRecord?.assessment}</div>
-            <div>Plan: {currentRecord?.plan}</div>
+            <div className="SO">
+                <div className="section">
+                    <div><b>Subjective:</b></div>
+                    <div className="bullet_point">{currentRecord?.subjective}</div>
+                </div>
+                <div className="section">
+                    <div><b>Objective</b></div>
+                    <div className="bullet_point">{currentRecord?.objective}</div>
+                </div>
+            </div>
+            <div className="SO">
+                <div>
+                    <div><b>Assessment:</b></div>
+                    <div className="bullet_point">{currentRecord?.assessment}</div>
+                </div>
+                <div>
+                    <div><b>Plan:</b></div>
+                    <div className="bullet_point">{currentRecord?.plan}</div>
+                </div>
+            </div>
+
         </section>
         <section className="record_tags">
-            <div>Medication: {currentRecord?.medications_on_record?.map(med=>{
-                return <div>{med?.medication?.name} </div>
-            })}</div>
-            <div>Diagnosis: {currentRecord?.diagnosis?.diagnosis}</div>
+            <div className="medication-tags">
+                <div><b>Medication: </b></div> 
+                {
+                currentRecord?.medications_on_record?.map(med=>{
+                    return <div className="record_medications">{med?.medication?.name} </div>
+                })
+                }
+            </div>
+            <div><b>Diagnosis:</b> {currentRecord?.diagnosis?.diagnosis}</div>
         </section>
     </section>
-    <section>
-        <div>{currentRecord?.record_addendums?.map(addendum=>{return <section><div className="addendum-section">{addendum.addendum}</div><div>This addendum was created on {addendum.created_on}</div></section>})}</div>
-        
+    <section className="Addendums">
+        <div>{currentRecord?.record_addendums?.map(addendum=>{
+            return <section className="single_addendum">
+                    <div>This addendum was created on {addendum.created_on}</div>
+                    <div className="addendum-section">{addendum.addendum}</div>
+                    
+                </section>
+            })}
+        </div>   
     </section>
-    <button onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}>back</button>
+
     </>
 }

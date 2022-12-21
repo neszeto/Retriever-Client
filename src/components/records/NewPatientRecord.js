@@ -19,6 +19,7 @@ export const NewPatientRecord = () => {
     const [filteredMedications, setFiltered] = useState([])
     const [addedMeds, setAddedMeds] = useState(false)
     const [addButton, setAddButton] = useState(false)
+    const [finalize, setFinalize] = useState(false)
   
 
     const patientMedications = useRef([])
@@ -136,41 +137,53 @@ export const NewPatientRecord = () => {
         
     }
     
-   return <>
+   return <section className="whole_record_form">
+    <div className="record_back_button">
+        <button onClick={()=>navigate(`/Patient/${patientId}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
+    </div>
    <fieldset>
-        <div>New Medical Record for {patient?.name}</div>
+        <div>New Medical Record for <b>{patient?.name}</b></div>
         <section className="Record_form">
-            <label className="form_headers" htmlFor="doctor">Medical Record Written By: </label>
-            <select id="doctor" className="form_select" name="doctorId" onChange={changeRecordState}>
-                <option value="">Select Doctor</option>
-                {
-                    doctors?.map(doctor => {
-                        if (doctor.is_staff === false && doctor.users_that_are_doctors[0].active === true) {
-                           return <option value={doctor?.id} key={doctor?.id}>Dr. {doctor?.first_name} {doctor?.last_name}</option>
-                        }
-                    })
-                }
-            </select>
-            <label className="form_headers" htmlFor="presenting_complaint">Presenting Complaint </label>
-            <input className="form_input" required autoFocus type="text" name="presentingComplaint" onChange={changeRecordState}/>
-            <label className="form_headers" htmlFor="subjective">Subjective</label>
-            <textarea id="subjective" className="text_field" name="subjective" onChange={changeRecordState}/>
-            <label className="form_headers" htmlFor="objective">Objective</label>
-            <textarea id="objective" className="text_field" name="objective" onChange={changeRecordState}/>
-            <label className="form_headers" htmlFor="assessment">Assessment</label>
-            <textarea id="assessment" className="text_field" name="assessment" onChange={changeRecordState}/>
-            <label className="form_headers" htmlFor="plan">Plan</label>
-            <textarea id="plan" className="text_field" name="plan" onChange={changeRecordState}/>
-            <label className="form_headers" htmlFor="diagnosis">Diagnosis </label>
-            <input className="form_input" required autoFocus type="text" name="diagnosis" onChange={changeRecordState}/>
-            <label className="form_headers" htmlFor="date">Appointment Date</label>
-            <input className="form_input" required autoFocus type="date" name="date" onChange={changeRecordState}/>
+            <div className="select_doctor">
+                <label className="form_headers" htmlFor="doctor">Medical Record Written By: </label>
+                <select id="doctor" className="form_select" name="doctorId" onChange={changeRecordState}>
+                    <option value="">Select Doctor</option>
+                    {
+                        doctors?.map(doctor => {
+                            if (doctor.is_staff === false && doctor.users_that_are_doctors[0].active === true) {
+                            return <option value={doctor?.id} key={doctor?.id}>Dr. {doctor?.first_name} {doctor?.last_name}</option>
+                            }
+                        })
+                    }
+                </select>
+            </div>
+            <label className="record_form_headers" htmlFor="presenting_complaint">Presenting Complaint </label>
+            <input className="record_form_input" required autoFocus type="text" name="presentingComplaint" onChange={changeRecordState}/>
+            <label className="record_form_headers" htmlFor="subjective">Subjective</label>
+            <textarea id="subjective" className="record_text_field" name="subjective" onChange={changeRecordState}/>
+            <label className="record_form_headers" htmlFor="objective">Objective</label>
+            <textarea id="objective" className="record_text_field" name="objective" onChange={changeRecordState}/>
+            <label className="record_form_headers" htmlFor="assessment">Assessment</label>
+            <textarea id="assessment" className="record_text_field" name="assessment" onChange={changeRecordState}/>
+            <label className="record_form_headers" htmlFor="plan">Plan</label>
+            <textarea id="plan" className="record_text_field" name="plan" onChange={changeRecordState}/>
+            <div className="diagnosis_date">
+                <div>
+                    <label className="record_form_headers" htmlFor="diagnosis">Diagnosis </label>
+                    <input className="record_form_input" required autoFocus type="text" name="diagnosis" onChange={changeRecordState}/>
+                </div>
+                <div>
+                    <label className="record_form_headers" htmlFor="date">Appointment Date</label>
+                    <input className="record_form_input" required autoFocus type="date" name="date" onChange={changeRecordState}/>
+                </div>
+            </div>
         </section>
         <section className="medication_search">
-            <label className="search_medication" htmlFor="search_medications"></label>
-            <input onChange={
-                    (evt) => {setSearch(evt.target.value)}
-                }type="text" name="search_medication" className="search_field" placeholder="search medication to add..."/>
+            <div className="search_meds_and_add_button">
+                <label className="search_medication" htmlFor="search_medications"></label>
+                <input onChange={
+                        (evt) => {setSearch(evt.target.value)}
+                    }type="text" name="search_medication" className="search_field" placeholder="search medications to add..."/>
                 <div>
                     {
                         addButton
@@ -178,19 +191,20 @@ export const NewPatientRecord = () => {
                         : <button className="deactivated_add_button">Add</button>
                     }
                 </div>
+            </div>
             <section className="added_and_searched_meds">
                 <div className="searched_medications">
-                    <div>{filteredMedications.map(medication=><button onClick={
+                    <div>{filteredMedications.map(medication=><button className="medication_button" onClick={
                         () => {
                             patientMedications.current.push(medication)
                             setAddedMeds(!addedMeds)
                         }
                     }>{medication.name}</button>)}</div>
                 </div>
-                <div className="added_medications">Patient Medications:   
+                <div className="added_medications"><b>Patient Medications:</b>
                 {
                     addedMeds || !addedMeds
-                    ? <div>{patientMedications.current.map(medication=> <div>{medication.name}<button onClick={
+                    ? <div className="medication_added_to_form">{patientMedications.current.map(medication=> <div>{medication.name}<button className="remove_med_button" onClick={
                         ()=>{
                             const index = patientMedications.current.findIndex(med => {
                                 return med.id === medication.id;
@@ -199,7 +213,7 @@ export const NewPatientRecord = () => {
                             patientMedications.current.splice(index, 1)
                             setAddedMeds(!addedMeds)
                         }
-                    }>remove</button></div>)}</div>
+                    }><i class="fa-regular fa-trash-can fa-xs"></i></button></div>)}</div>
                     : ""
                     
                 }
@@ -209,8 +223,19 @@ export const NewPatientRecord = () => {
 
         </section>
         </fieldset>
-        <button onClick={(evt)=>{FinalizeMedicalRecord(evt)}}>Finalize</button>
-        </>
+        <div className="finalize_button_check">
+            <button className="finalize_button" onClick={()=>setFinalize(true)}>Finalize</button>
+            {
+                finalize
+                ? <section className="finalize_check">
+                    <div><i>Finalized medical records cannot be altered. Are you sure you want to finalize?</i></div>
+                    <button className="check_button" onClick={(evt)=>FinalizeMedicalRecord(evt)}>Yes</button>
+                    <button className="check_button" onClick={()=>setFinalize(false)}>No</button>
+                </section>
+                : ""
+            }
+        </div>
+    </section>
         
 
 }
