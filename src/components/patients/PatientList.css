@@ -33,9 +33,7 @@
 
 }
 
-.radio_buttons {
-    margin-right: 2%;
-}
+
 
 .Patient_List_Headers {
     border: solid black;
@@ -61,4 +59,88 @@
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 1%;
+}
+
+
+
+.canine_toggle {
+    background-color: lightcoral; 
+    border: none;
+    height: 100%;
+    transition-duration: 300ms;
+    cursor: pointer;
+    
+    color: white; 
+    border-radius: 10px 0 0 10px
+    
+    
+}
+
+.both_toggle {
+    background-color: lightcoral; 
+    border: none;
+    height: 100%;
+    transition-duration: 300ms;
+    cursor: pointer;
+    
+    color: white; 
+    
+    
+}
+
+.feline_toggle {
+    background-color: lightcoral; 
+    border: none;
+    height: 100%;
+    transition-duration: 300ms;
+    cursor: pointer;
+    
+    color: white; 
+    border-radius: 0 5px 5px 0;
+    
+    
+}
+
+.canine_not {
+    border: none; 
+    background-color: white;
+    height: 100%;
+    transition-duration: 300ms;
+    cursor: pointer;
+    background-color: #e4e4e4;
+    border-radius: 5px 0 0 5px
+    
+    
+}
+
+.feline_not {
+    border: none; 
+    background-color: white;
+    height: 100%;
+    transition-duration: 300ms;
+    cursor: pointer;
+    background-color: #e4e4e4;
+    border-radius: 0 5px 5px 0;
+    
+    
+}
+
+.both_not {
+    border: none; 
+    background-color: white;
+    height: 100%;
+    transition-duration: 300ms;
+    cursor: pointer;
+    background-color: #e4e4e4;
+    
+    
+    
+}
+
+.radio_buttons {
+   
+    display: flex;
+   
+    
+
 }

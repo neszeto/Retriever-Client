@@ -12,7 +12,7 @@ export const PatientList = () => {
     const [search2, setSearch2] = useState("")
     const [canineRadio, setCanine] = useState(false)
     const [felineRadio, setFeline] = useState(false)
-    const [bothRadio, setBoth] = useState(false)
+    const [bothRadio, setBoth] = useState(true)
 
     let navigate = useNavigate()
 
@@ -94,7 +94,7 @@ export const PatientList = () => {
 
     return <section className="whole-list-page">
         <section className="new_patient_button">
-            <button onClick = {() => {navigate(`/newPatientForm`)}}>Add New Patient</button>
+            <button onClick = {() => {navigate(`/newPatientForm`)}}><i class="fa-solid fa-plus fa-sm"></i> New Patient</button>
         </section>
         <section className="all_filters">
             <section className="search_inputs">
@@ -111,12 +111,10 @@ export const PatientList = () => {
                 }type="text" name="search_terms" className="search_input_field" placeholder=" search by client or patient..."/>
             </section>
             <section className="radio_buttons">
-                <input onClick = {() => setCanine(!canineRadio)}type="radio" id="canine" name="radio_buttons" />
-                <label for="canine">Canine</label>
-                <input onClick = {() => setFeline(!felineRadio)}type="radio" id="feline" name="radio_buttons" />
-                <label for="feline">Feline</label>
-                <input onClick = {() => setBoth(!bothRadio)}type="radio" id="both" name="radio_buttons" />
-                <label for="both">Both</label>
+               
+                <button className={canineRadio ?"canine_toggle" : "canine_not"} onClick = {() => setCanine(!canineRadio)}>Canine</button>
+                <button className={bothRadio ?"both_toggle" : "both_not"} onClick = {() => setBoth(!bothRadio)}>Both</button>
+                <button className={felineRadio ?"feline_toggle" : "feline_not"} onClick = {() => setFeline(!felineRadio)}>Feline</button> 
             </section>
         </section>
         <section className="Patient_List">
