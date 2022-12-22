@@ -1,3 +1,7 @@
+.entire_nav {
+    background-color: rgb(15, 17, 22);
+}
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -20,6 +24,9 @@
     border-radius: 50%;
     overflow: hidden;
     margin-top: -6px;
+    margin-left: 5px;
+    border: solid white; 
+    
 }
 
 .logged_in_user {
@@ -27,7 +34,7 @@
 }
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: white;
+    background-color: rgb(15, 17, 22);
     overflow: hidden;
     margin-left: 0.01%;
   }
@@ -41,10 +48,10 @@
     font-size: 17px;
     border: none;
     outline: none;
-    color: black; 
+    color: white; 
     font-family: inherit;
     margin: 0;
-    background-color: white; 
+    background-color: rgb(15, 17, 22);
   }
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {

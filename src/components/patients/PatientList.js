@@ -93,8 +93,8 @@ export const PatientList = () => {
     
 
     return <section className="whole-list-page">
-        <section className="new_patient_button">
-            <button onClick = {() => {navigate(`/newPatientForm`)}}><i class="fa-solid fa-plus fa-sm"></i> New Patient</button>
+        <section className="new_patient_button_box">
+            <button className="new_patient_button" onClick = {() => {navigate(`/newPatientForm`)}}><i class="fa-solid fa-plus fa-sm"></i> new patient</button>
         </section>
         <section className="all_filters">
             <section className="search_inputs">
@@ -129,10 +129,10 @@ export const PatientList = () => {
                 {
                     filteredPatients?.map(patient => {
                         return <>
-                        <Link className="patient" style={{textDecoration: 'none'}} to={`/patient/${patient?.id}`}>{patient?.name}</Link>
+                        <Link className="link" style={{textDecoration: 'none'}} to={`/patient/${patient?.id}`}>{patient?.name}</Link>
                         <div className="patient">{patient?.age} yo, {patient?.sex === "Male" ? "MN" : "FS"}, {patient?.breed}</div>
                         <div className="patient">{patient?.species?.species}</div>
-                        <Link className="patient"style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link>
+                        <Link className="link"style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link>
                         <div className="patient">{patient?.deceased ? "deceased" : "active"}</div>
                         </>
                     })

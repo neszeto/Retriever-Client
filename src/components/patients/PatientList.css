@@ -16,33 +16,57 @@
     
 
 }
-.new_patient_button {
+.new_patient_button_box {
     display: flex;
     justify-content: flex-end;
-    margin-right: 2%;
+    margin-right: 5%;
 
+}
+
+.new_patient_button {
+    background-color: rgb(35 39 45);
+    border: none; 
+    padding: 0.2%;
+    padding-left: 0.3%;
+    padding-right: 0.3%;
+    border-radius: 2%;
+    border:thin solid  black;
+    color: rgb(141 148 157);
+}
+
+.new_patient_button:hover {
+    box-shadow: black 0px 0px 25px 10px;
 }
 
 .search_input_field {
     width: 17em;
-    margin-left: 2%
+    margin-left: 2%;
+    background-color: rgb(207 208 208);
+    border: none; 
+    height: 1.7em; 
     
 }
 .search_inputs {
     display: flex;
+    margin-left: 5%;
 
 }
 
-
+.Patient_List {
+    background-color: rgb(35 39 45);
+    color: rgb(141 148 157);
+    margin: 0 5% 0 5%;
+}
 
 .Patient_List_Headers {
-    border: solid black;
+    border: thin solid rgb(141 148 157);
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     padding-left: 1%;
     padding-right: 1%;
+    color: white; 
 }
 .header {
     display: flex;
@@ -52,10 +76,12 @@
     display: flex;
     justify-content: center;
     margin: 0.2%;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 14px
 }
 
 .patients {
-    border: solid black;
+    border: thin solid rgb(141 148 157);
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 1%;
@@ -64,38 +90,36 @@
 
 
 .canine_toggle {
-    background-color: lightcoral; 
+    background-color: rgb(153 228 145);
     border: none;
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    
-    color: white; 
+    color: black;
     border-radius: 10px 0 0 10px
     
     
 }
 
 .both_toggle {
-    background-color: lightcoral; 
+    background-color: rgb(153 228 145);
     border: none;
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    
-    color: white; 
+    color: black; 
     
     
 }
 
 .feline_toggle {
-    background-color: lightcoral; 
+    background-color: rgb(153 228 145);
     border: none;
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
     
-    color: white; 
+    color: black; 
     border-radius: 0 5px 5px 0;
     
     
@@ -103,44 +127,55 @@
 
 .canine_not {
     border: none; 
-    background-color: white;
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    background-color: #e4e4e4;
-    border-radius: 5px 0 0 5px
+    background-color: rgb(141 148 157);
+    border-radius: 5px 0 0 5px;
+    color: white; 
     
     
 }
 
 .feline_not {
     border: none; 
-    background-color: white;
+    
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    background-color: #e4e4e4;
+    background-color: rgb(141 148 157);
     border-radius: 0 5px 5px 0;
+    color: white; 
     
     
 }
 
 .both_not {
     border: none; 
-    background-color: white;
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    background-color: #e4e4e4;
-    
-    
-    
+    background-color: rgb(141 148 157);
+    color: white;   
 }
 
 .radio_buttons {
    
     display: flex;
-   
-    
+    margin-right: 3.7%;
 
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 14px;
+    color: white;
+    opacity: 0.8;
+
+}
+
+.link:hover {
+    color: rgb(153 228 145) 
 }

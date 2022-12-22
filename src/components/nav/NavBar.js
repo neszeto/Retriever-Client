@@ -21,7 +21,7 @@ export const NavBar = () => {
    
 
     return (
-        <>
+        <section className="entire_nav">
             <ul className="navbar">
             {
                 (localStorage.getItem("re_token") !== null) 
@@ -77,6 +77,6 @@ export const NavBar = () => {
             }            
             </ul>
             <Outlet/>
-        </>
+        </section>
     )
 }
