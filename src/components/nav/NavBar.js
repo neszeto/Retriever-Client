@@ -22,6 +22,7 @@ export const NavBar = () => {
 
     return (
         <section className="entire_nav">
+            <div className="retriever">Retriever | <i className="tag">Veterinary Software</i></div>
             <ul className="navbar">
             {
                 (localStorage.getItem("re_token") !== null) 

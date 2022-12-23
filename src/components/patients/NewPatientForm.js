@@ -105,51 +105,81 @@ export const NewPatientForm = () => {
     }
     
     return <>
-    <fieldset className = "Owner_info">Owner's Information 
-        <section>
-            <label className="form_headers" htmlFor="owner_name">Name: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="name"/>
-            <label className="form_headers" htmlFor="owner_email">Email: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="email"/>
-        </section>
-        <section>
-            <label className="form_headers" htmlFor="owner_phone">Phone Number: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="phoneNumber"/>
-            <label className="form_headers" htmlFor="owner_address">Address: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="address"/>
-        </section>
-    </fieldset>
-    <fieldset className = "Pet_info">Pet's Information
-        <section>
-            <label className="form_headers" htmlFor="owner_name">Name: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changePetState} name = "name"/>
-            <label className="form_headers" htmlFor="owner_email">Breed: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changePetState} name = "breed"/>
-            <label className="form_headers" htmlFor="owner_email">Age: </label>
-            <input className="form_input" required autoFocus type="number" onChange = {changePetState} name = "age"/> years 
-            <label className="form_headers" htmlFor="owner_email">Color: </label>
-            <input className="form_input" required autoFocus type="text" onChange = {changePetState} name = "color"/>
-            <label className="form_headers" htmlFor="owner_email">Weight: </label>
-            <input className="form_input" required autoFocus type="number" onChange = {changePetState} name = "weight"/> lbs
-        </section>
-        <section>
-            <input type="radio" id="male" name="sex" onChange = {changePetState} value="Male"/>
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="sex" onChange = {changePetState} value="Female"/>
-            <label for="female">Female</label>
-            <select id="species" className="form_input" onChange = {changePetState} name = "speciesId">
-                <option value="">Select Species</option>
-                {
-                    species.map(species => <option value={species.id} key={species.id}>{species.species}</option>)
-                }
-            </select>
-            <div className="upload_preview">
-                <button className="form_upload_button" onClick={(evt) => showWidget(evt)}>Upload Image</button>
-                <div>Image Preview: </div>
-                <img src={pet.image} width="100px"/>
+    <section className="whole_new_pet_form">
+        <div><b>Owner's Information <i class="fa-solid fa-angles-right fa-sm"></i></b>
+            <div className = "Owner_info">
+                <section className="owner_input">
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_name">Name: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="name"/>
+                    </div>
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_email">Email: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="email"/>
+                    </div>
+                
+                </section>
+                <section className="owner_input">
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_phone">Phone Number: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="phoneNumber"/>
+                    </div>
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_address">Address: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="address"/>
+                    </div>
+                </section>
             </div>
-        </section>
-    </fieldset>
-    <button onClick = {Submit}>Add Patient</button>
+        </div>
+        <div><b>Pet's Information <i class="fa-solid fa-angles-right fa-sm"></i></b>
+            <div className = "Pet_info">
+                <section className="pet_input">
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_name">Name: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changePetState} name = "name"/>
+                    </div>
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_email">Breed: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changePetState} name = "breed"/>
+                    </div>
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_email">Age: </label>
+                        <input className="form_input_num" required autoFocus type="number" onChange = {changePetState} name = "age"/> years 
+                    </div>
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_email">Color: </label>
+                        <input className="form_input" required autoFocus type="text" onChange = {changePetState} name = "color"/>
+                    </div>
+                    <div className="line">
+                        <label className="form_headers" htmlFor="owner_email">Weight: </label>
+                        <input className="form_input_num" required autoFocus type="number" onChange = {changePetState} name = "weight"/> lbs
+                    </div>
+                </section>
+                <section>
+                    <div className="line">
+                        <input type="radio" id="male" name="sex" onChange = {changePetState} value="Male"/>
+                        <label for="male">Male</label>
+                        <input className="female_input" type="radio" id="female" name="sex" onChange = {changePetState} value="Female"/>
+                        <label for="female">Female</label>
+                    </div>
+                    <div className="line">
+                        <select id="species" className="form_select" onChange = {changePetState} name = "speciesId">
+                            <option value="">Select Species</option>
+                            {
+                                species.map(species => <option value={species.id} key={species.id}>{species.species}</option>)
+                            }
+                        </select>
+                    </div>
+                    <div className="upload_preview">
+                        <button className="form_upload_button" onClick={(evt) => showWidget(evt)}>Upload Image</button>
+                        <div className="image_preview">Image Preview: </div>
+                        <img className="image_pet" src={pet.image} width="100px"/>
+                    </div>  
+                </section>
+            </div>
+        </div>
+    
+    </section>
+    <button className="add_patient_button" onClick = {Submit}>Add Patient</button>
     </>
 }

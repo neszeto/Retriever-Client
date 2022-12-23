@@ -137,10 +137,11 @@ export const NewPatientRecord = () => {
         
     }
     
-   return <section className="whole_record_form">
+   return <>
     <div className="record_back_button">
         <button onClick={()=>navigate(`/Patient/${patientId}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
     </div>
+   <section className="whole_record_form"> 
    <fieldset>
         <div>New Medical Record for <b>{patient?.name}</b></div>
         <section className="Record_form">
@@ -236,6 +237,7 @@ export const NewPatientRecord = () => {
             }
         </div>
     </section>
+</>
         
 
 }

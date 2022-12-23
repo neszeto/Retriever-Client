@@ -2,6 +2,17 @@
     background-color: rgb(15, 17, 22);
 }
 
+.retriever {
+  color: white;
+  margin: 1% 0 0 1%;
+  opacity: 0.8;
+  font-size: 15px;
+  
+}
+.tag {
+  opacity: 0.5;
+  font-size: 14px;
+}
 .navbar {
     display: flex;
     flex-wrap: nowrap;

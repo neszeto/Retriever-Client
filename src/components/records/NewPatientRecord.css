@@ -103,7 +103,9 @@
 
 .whole_record_form {
     border: solid green; 
-    margin: 10%;
+    margin: 5% 10% 10% 10%;
+    background-color: white; 
+    color: black; 
 }
 
 .finalize_button_check {
@@ -111,8 +113,9 @@
     flex-direction: column;
     align-items: center;
     border: solid blue;
+    padding-top: 3%;
 }
 
 .record_back_button {
-    margin-bottom: 3%;
+    margin-left: 10%;
 }

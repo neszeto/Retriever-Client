@@ -1,0 +1,86 @@
+.owner_input {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.Owner_info {
+    padding: 3%;
+    color:rgb(207 208 208);
+    
+    
+}
+
+.Pet_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3%;
+    color:rgb(207 208 208);
+}
+
+.form_input {
+    width: 20em;
+    height: 1.5em;
+}
+
+.line {
+    margin: 2% 0 2% 2%;
+}
+
+.form_input_num {
+    width: 5em;
+}
+
+.form_select {
+    margin-top: 5%;
+    width: 10em;
+}
+
+.upload_preview {
+    display: flex;
+    
+    margin-top: 10%;
+}
+
+.image_preview {
+    margin-left: 2%;
+    font-size: 0.8em;
+
+}
+
+.form_upload_button {
+    margin-left: 2%;
+    height: 2em;
+    width: 10em;
+}
+
+.female_input {
+    margin-left: 8%;
+}
+
+.image_pet {
+    margin: 0 0 0 2%;
+}
+
+.whole_new_pet_form {
+    margin: 3%;
+    background-color: rgb(24 27 33);
+    border: thin solid rgb(49 54 60);
+    border-radius: 1%;
+    padding: 3%;
+    
+}
+
+.add_patient_button {
+    background-color: rgb(141 148 157);
+    margin-left: 3%;
+    color: black;
+    border: none; 
+    border:thin solid  black;
+    padding-left: 0.3%;
+    padding-right: 0.3%;
+    border-radius: 2%;
+    cursor: pointer;
+    font-family: 'Sen', sans-serif;
+    border-radius: 8%;
+}

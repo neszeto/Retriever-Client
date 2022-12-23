@@ -44,34 +44,41 @@ export const PatientChart = () => {
                 <div className="image_name_breed">
                     <img className="image" src={patient.image_url} width="110px" height="110px" alt=""></img>
                     <div className="patientName">
-                        <Link style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
-                        <div>{patient?.deceased ? "(deceased)": ""}</div>
-                        <div><span>&#8594;</span><i>{patient?.species?.species}</i></div>
+                        <Link className="link_chart_pet" style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
+                        <div className="arrow_deceased">{patient?.deceased ? "(deceased)": ""}</div>
+                        <div className="arrow"><span>&#8594;</span><i>{patient?.species?.species}</i></div>
+                        
                     </div>
                 </div>
                 <div className="patientInfo">
+                    
                     <div className="info_line">{patient?.breed}</div>
                     <div className="info_line">Sex: {patient?.sex}</div>
                     <div className="info_line">Age: {patient?.age}yo</div>
                     <div className="info_line">Weight: {patient?.weight}lbs</div>
                     <div className="info_line">Color: {patient?.color}</div>
-                    <div className="info_line">Owner: <Link style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
+                    <div className="info_line">Owner: <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
                 </div>
             </section>
-            <div className="patient-chart">Patient Chart</div>
-            <section className="sub_header_button">
-                
-                {
-                    isStaff()
-                    ? ""
-                    : <button className="add_new" onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}><i class="fa-solid fa-plus fa-sm"></i> Medical Record</button>
-                }
-                <button className="view_all"onClick={()=>{setFiltered(record)}}>View All Medical Records</button>
+            <section className="border_line_container">
+                <div className="border_line"></div>
+            </section>
+            <section className="patient_chart_section">
+                <div className="patient-chart">Patient Chart</div>
+                <section className="sub_header_button">
+                    
+                    {
+                        isStaff()
+                        ? ""
+                        : <button className="add_new" onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}><i class="fa-solid fa-plus fa-sm"></i> Medical Record</button>
+                    }
+                    <button className="view_all"onClick={()=>{setFiltered(record)}}>View All Medical Records</button>
+                </section>
             </section>
             <section className="patient_chart_and_summary">
             {
             record.length === 0
-            ? <div>This patient has no medical charts to show</div> 
+            ? <div className="no_charts">This patient has no medical charts to show</div> 
             : <section className="patient_charts">
                 {
                     filteredRecord.map(rec=>{

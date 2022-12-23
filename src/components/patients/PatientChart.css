@@ -1,17 +1,20 @@
 
 .whole_page {
-    border: solid purple;
+    
     height: 70%; 
     
 }
 
 /*Medical Records -------------------*/
-.patient_charts {
-    border: solid orange; 
-    
+
+.no_charts {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
+
 .record_date {
-    border: solid pink;
+    
     display: flex; 
     justify-content: center;
    
@@ -25,10 +28,13 @@
 
 .medical_record {
     border: solid black;
+    background-color: white;
+    color: black; 
     width: 70%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 1%
+    margin-top: 2%;
+    
+    padding: 1%;
+    border-radius: 1%;
 }
 
 
@@ -81,7 +87,6 @@
 /* Patient chart and Patient Summary ----------*/
 
 .patient_chart_and_summary {
-    border: solid green;
     display: grid;
     grid-template-columns: 3.5fr 1fr;
     
@@ -90,30 +95,41 @@
 /*Patient Header ------------------------*/
 
 .pet_header_information {
-    border: solid blue; 
     display: flex; 
-    width: 100%; 
+    margin-left: 3%;
+    
+    justify-content: center;
+    
    
+}
+.border_line_container {
+    display: flex; 
+    justify-content: center; 
+    padding-top: 2%;
+    padding-bottom: 6%;
+}
+.border_line {
+    border-bottom: solid thin rgb(141 148 157);
+    width: 90%;
+    text-align: center; 
 }
 
 .image {
     border-radius: 50%;
-    
-    
 }
 
 .patientName {
    display: flex; 
+   width: 15em;
+   padding-left: 8%;
    
 }
 
 .patientInfo {
     display: flex;
-   
+   padding-bottom: 0.4%;
     align-items: flex-end;
     width: 100%; 
-   
-
     
 }
 
@@ -125,30 +141,76 @@
     margin: 1%;
 }
 
+.link_chart_pet {
+    color: rgb(153 228 145);
+    font-size: 1.5em;
+    padding-top: 3%;
+    
+    
+}
+
+.link_chart_owner {
+    color: rgb(153 228 145);
+    
+}
+
+.link_chart_pet:hover {
+    opacity: 0.5; 
+    
+}
+
+.link_chart_owner:hover {
+   opacity: 0.5;
+    
+}
+
 /*Patient Sub-headers ---------------------*/
 .sub_header_button {
     display: grid; 
     grid-template-areas: "one . . . . . .two . . . ." ;
-    margin-left: 2%;
+    margin-left: 3%;
     margin-right: 2%;
     margin-bottom: 1%;
+    margin-top: 1%;
+    
 }
 .view_all {
     grid-area: two; 
     width: 70%;
     margin-left: 30%;
     margin-right: 0%;
+    font-family: 'Sen', sans-serif;
 }
 
 .add_new {
     grid-area: one;
     width: 70%;
+    font-family: 'Sen', sans-serif;
 
 }
 
 .patient-chart {
-    margin-left: 2%; 
+    margin-left: 3%; 
     margin-top: 1%;
+    
+
+}
+
+.patient_chart_and_summary {
+    border: thin solid rgb(49 54 60);
+    margin: 0 3% 0 3%;
+    
+}
+
+.arrow {
+    padding-top: 6%;
+    padding-left: 1%;
+}
+
+.arrow_deceased {
+    padding-top: 6%;
+    margin-left: 1%;
+    
 }
 
 
@@ -156,6 +218,8 @@
 
 .summary_filter { /*buttons*/
     border: none; 
+    font-family: 'Sen', sans-serif;
+
 }
 
 .patient_summary {
@@ -165,6 +229,9 @@
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 10%;
+    background-color: rgb(35 39 45);
+    border: thin solid rgb(49 54 60);
+    
 
 }
 
@@ -183,3 +250,4 @@
 .summary_filter {
     margin: 1%;
 }
+

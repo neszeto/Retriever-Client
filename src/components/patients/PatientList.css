@@ -1,11 +1,8 @@
 
-/*.whole-list-page {
-    background-color: rgb(16, 24, 41);
-    color: rgb(127, 135, 166);
-    width: 100%;
-    
-    
-}*/
+.whole-list-page {
+    font-family: 'Sen', sans-serif;
+
+}
 
 .all_filters {
     display: flex;
@@ -32,6 +29,8 @@
     border-radius: 2%;
     border:thin solid  black;
     color: rgb(141 148 157);
+    cursor: pointer;
+    font-family: 'Sen', sans-serif;
 }
 
 .new_patient_button:hover {
@@ -39,11 +38,12 @@
 }
 
 .search_input_field {
-    width: 17em;
+    width: 19em;
     margin-left: 2%;
     background-color: rgb(207 208 208);
     border: none; 
     height: 1.7em; 
+    font-family: 'Sen', sans-serif;
     
 }
 .search_inputs {
@@ -76,7 +76,7 @@
     display: flex;
     justify-content: center;
     margin: 0.2%;
-    font-family: 'Mochiy Pop P One', sans-serif;
+    
     font-size: 14px
 }
 
@@ -96,7 +96,8 @@
     transition-duration: 300ms;
     cursor: pointer;
     color: black;
-    border-radius: 10px 0 0 10px
+    border-radius: 10px 0 0 10px;
+    font-family: 'Sen', sans-serif;
     
     
 }
@@ -108,6 +109,7 @@
     transition-duration: 300ms;
     cursor: pointer;
     color: black; 
+    font-family: 'Sen', sans-serif;
     
     
 }
@@ -118,7 +120,7 @@
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    
+    font-family: 'Sen', sans-serif;
     color: black; 
     border-radius: 0 5px 5px 0;
     
@@ -130,22 +132,23 @@
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    background-color: rgb(141 148 157);
+    background-color: rgb(207 208 208);
     border-radius: 5px 0 0 5px;
-    color: white; 
+    color: rgb(141 148 157);
+    font-family: 'Sen', sans-serif;
     
     
 }
 
 .feline_not {
     border: none; 
-    
+    font-family: 'Sen', sans-serif;
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    background-color: rgb(141 148 157);
+    background-color: rgb(207 208 208);
     border-radius: 0 5px 5px 0;
-    color: white; 
+    color: rgb(141 148 157);
     
     
 }
@@ -155,8 +158,9 @@
     height: 100%;
     transition-duration: 300ms;
     cursor: pointer;
-    background-color: rgb(141 148 157);
-    color: white;   
+    background-color:  rgb(207 208 208);
+    color: rgb(141 148 157);  
+    font-family: 'Sen', sans-serif;
 }
 
 .radio_buttons {
@@ -169,7 +173,7 @@
 .link {
     display: flex;
     justify-content: center;
-    font-family: 'Mochiy Pop P One', sans-serif;
+    
     font-size: 14px;
     color: white;
     opacity: 0.8;
