@@ -1,0 +1,64 @@
+/*owner information------------------------*/
+
+.owner_name {
+    font-size: 20px; 
+    margin-bottom: 1%;
+}
+
+.Owner_info {
+    width: 30%;
+}
+
+.owner_sub_info {
+    
+}
+
+
+
+
+/*owner edit form----------------------------*/
+.edit_owner_form {
+    background-color: rgb(24 27 33);
+    border: thin solid rgb(49 54 60);
+    border-radius: 1%;
+    padding: 3%;
+    margin: 3%;
+    color: white; 
+    width: 30%;
+}
+
+.owner_header {
+    display: flex;
+    flex-direction: column; 
+    margin: 1%;
+}
+
+.save_button_container {
+    
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5%;
+    padding-right: 5%;
+}
+
+.owner_edit_button {
+    background-color: rgb(15, 17, 22);
+    color: white;
+    border: none; 
+    margin-left: 1%;
+    cursor: pointer;
+}
+
+.owner_edit_button:hover {
+    color: rgb(153 228 145);
+}
+
+.owner_save_button {
+    font-family: 'Sen', sans-serif;
+}
+
+.form_input_owner {
+    font-family: 'Sen', sans-serif;
+    width: 25em;
+}   
+

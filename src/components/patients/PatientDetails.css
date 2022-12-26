@@ -39,7 +39,7 @@
     margin-left: 3%;
     color: black;
     border: none; 
-    border:thin solid  black;
+    
     padding-left: 0.3%;
     padding-right: 0.3%;
     border-radius: 2%;
@@ -47,3 +47,4 @@
     font-family: 'Sen', sans-serif;
     border-radius: 8%;
 }
+

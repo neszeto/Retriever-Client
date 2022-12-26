@@ -25,6 +25,13 @@
 
 .line {
     margin: 2% 0 2% 2%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.line_select {
+    margin: 2% 0 2% 2%;
+    
 }
 
 .form_input_num {
@@ -34,6 +41,7 @@
 .form_select {
     margin-top: 5%;
     width: 10em;
+    height: 2em;
 }
 
 .upload_preview {
@@ -83,4 +91,6 @@
     cursor: pointer;
     font-family: 'Sen', sans-serif;
     border-radius: 8%;
+    margin-bottom: 9em; 
 }
+

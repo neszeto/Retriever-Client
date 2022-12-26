@@ -4,50 +4,79 @@
 }
 .record_delete_button {
     border: none;
-    background-color: white;
+    background-color: rgb(49 54 60);
+    color: rgb(232, 232, 232);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.record_delete_button:hover {
+    opacity: 1; 
 }
 
 .medical_record_edit {
     margin: 5% 10% 0% 10%;
     padding: 1%;
-    border: solid black;
     width: 70%;
     margin-top: 1%;
     margin-bottom: 1%;
-    padding: 1%
+    background-color: rgb(49 54 60);
+    border:thin solid  rgb(77, 85, 95);
+    color: rgb(232, 232, 232);
+    
+    
 }
 
 
 .single_addendum { /*single addendum*/
     margin: 3% 10% 0% 10%;
-    border: solid black; 
     padding: 1%;
     width: 70%;
     display: flex;
     flex-direction: column;
+    border:thin solid  rgb(77, 85, 95);
+    background-color: rgb(49 54 60);
+    color: rgb(232, 232, 232);
+    
+}
+
+.back_button_container {
+    margin: 10% 10% 0% 10%;
+    
 }
 
 .back_button {
-    margin: 10% 10% 0% 10%;
+    cursor: pointer;
 }
 
-.add_addendum_button {
+.add_addendum_button_container {
 
     display: flex;
     justify-content: flex-end;
     width: 72%;
     margin: 1% 10% 10% 10%;
-    
+}
+
+.add_addendum_button {
+    cursor: pointer;
 }
 
 .delete_addendum {
     display: flex;
     justify-content: flex-end; 
+    
 }
 
 .addendum_delete_button {
     border: none; 
-    background-color: white;
+    background-color: rgb(49 54 60);
+    color: rgb(232, 232, 232);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.addendum_delete_button:hover {
+    opacity: 1;
 }
 
 .Addendum_form {
@@ -57,6 +86,9 @@
     width: 70%;
     display: flex; 
     flex-direction: column;
+    
+    background-color: rgb(49 54 60);
+    color: rgb(232, 232, 232);
 }
 
 .save_addendum_button {
@@ -64,13 +96,21 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 0.5%;
+    
+    
+}
+
+.button_save {
+    font-family: 'Sen', sans-serif;
 }
 
 .addendum-section {
     margin: 3%;
+    
 }
 
 .record_medications {
     margin-top: 1%;
     margin-left: 2%;
+    font-size: 12px;
 }

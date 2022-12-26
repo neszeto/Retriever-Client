@@ -138,15 +138,16 @@ export const NewPatientRecord = () => {
     }
     
    return <>
-    <div className="record_back_button">
-        <button onClick={()=>navigate(`/Patient/${patientId}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
+    <div>
+        <button className="record_back_button" onClick={()=>navigate(`/Patient/${patientId}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
     </div>
    <section className="whole_record_form"> 
-   <fieldset>
+   <section>
+    <section className="Record_form">
         <div>New Medical Record for <b>{patient?.name}</b></div>
-        <section className="Record_form">
+        
             <div className="select_doctor">
-                <label className="form_headers" htmlFor="doctor">Medical Record Written By: </label>
+                <label className="form_written_by" htmlFor="doctor">Medical Record Written By: </label>
                 <select id="doctor" className="form_select" name="doctorId" onChange={changeRecordState}>
                     <option value="">Select Doctor</option>
                     {
@@ -158,8 +159,11 @@ export const NewPatientRecord = () => {
                     }
                 </select>
             </div>
-            <label className="record_form_headers" htmlFor="presenting_complaint">Presenting Complaint </label>
-            <input className="record_form_input" required autoFocus type="text" name="presentingComplaint" onChange={changeRecordState}/>
+        
+            <div className="presenting_complaint">
+                <label className="record_form_headers" htmlFor="presenting_complaint">Presenting Complaint </label>
+                <input className="record_form_input" required autoFocus type="text" name="presentingComplaint" onChange={changeRecordState}/>
+            </div>
             <label className="record_form_headers" htmlFor="subjective">Subjective</label>
             <textarea id="subjective" className="record_text_field" name="subjective" onChange={changeRecordState}/>
             <label className="record_form_headers" htmlFor="objective">Objective</label>
@@ -169,11 +173,11 @@ export const NewPatientRecord = () => {
             <label className="record_form_headers" htmlFor="plan">Plan</label>
             <textarea id="plan" className="record_text_field" name="plan" onChange={changeRecordState}/>
             <div className="diagnosis_date">
-                <div>
+                <div className="diagnosis_date_header">
                     <label className="record_form_headers" htmlFor="diagnosis">Diagnosis </label>
                     <input className="record_form_input" required autoFocus type="text" name="diagnosis" onChange={changeRecordState}/>
                 </div>
-                <div>
+                <div className="diagnosis_date_header">
                     <label className="record_form_headers" htmlFor="date">Appointment Date</label>
                     <input className="record_form_input" required autoFocus type="date" name="date" onChange={changeRecordState}/>
                 </div>
@@ -223,13 +227,13 @@ export const NewPatientRecord = () => {
             </section>
 
         </section>
-        </fieldset>
+        </section>
         <div className="finalize_button_check">
             <button className="finalize_button" onClick={()=>setFinalize(true)}>Finalize</button>
             {
                 finalize
                 ? <section className="finalize_check">
-                    <div><i>Finalized medical records cannot be altered. Are you sure you want to finalize?</i></div>
+                    <div className="double-check"><i>Finalized medical records cannot be altered. Are you sure you want to finalize?</i></div>
                     <button className="check_button" onClick={(evt)=>FinalizeMedicalRecord(evt)}>Yes</button>
                     <button className="check_button" onClick={()=>setFinalize(false)}>No</button>
                 </section>

@@ -144,7 +144,9 @@ export const NewPatientForm = () => {
                     </div>
                     <div className="line">
                         <label className="form_headers" htmlFor="owner_email">Age: </label>
-                        <input className="form_input_num" required autoFocus type="number" onChange = {changePetState} name = "age"/> years 
+                        <div className="line_units">
+                            <input className="form_input_num" required autoFocus type="number" onChange = {changePetState} name = "age"/> years 
+                        </div>
                     </div>
                     <div className="line">
                         <label className="form_headers" htmlFor="owner_email">Color: </label>
@@ -152,11 +154,13 @@ export const NewPatientForm = () => {
                     </div>
                     <div className="line">
                         <label className="form_headers" htmlFor="owner_email">Weight: </label>
-                        <input className="form_input_num" required autoFocus type="number" onChange = {changePetState} name = "weight"/> lbs
+                        <div className="line_units">
+                            <input className="form_input_num" required autoFocus type="number" onChange = {changePetState} name = "weight"/> lbs
+                        </div>
                     </div>
                 </section>
                 <section>
-                    <div className="line">
+                    <div className="line_select">
                         <input type="radio" id="male" name="sex" onChange = {changePetState} value="Male"/>
                         <label for="male">Male</label>
                         <input className="female_input" type="radio" id="female" name="sex" onChange = {changePetState} value="Female"/>

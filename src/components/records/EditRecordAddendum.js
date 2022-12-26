@@ -52,8 +52,8 @@ export const Addendum = () => {
    
 
     return <>
-        <div className="back_button">
-            <button onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
+        <div className="back_button_container">
+            <button className="back_button" onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
         </div>
         <section className="medical_record_edit">
             <div className="doctor">Dr. {currentRecord?.doctor?.first_name} {currentRecord?.doctor?.last_name}</div>
@@ -99,7 +99,7 @@ export const Addendum = () => {
         <section className="Addendums">
             <div>{currentRecord?.record_addendums?.map(addendum=>{
                 return <section className="single_addendum">
-                        <div>This addendum was created on {addendum.created_on}</div>
+                        <div><i>This addendum was created on {addendum.created_on}</i></div>
                         <div className="addendum-section">{addendum.addendum}</div>
                         <div className="delete_addendum">
                             <button className="addendum_delete_button" onClick={()=> deleteAddendum(addendum.id).then(()=> getRecordsWithAddendums(recordId))}><i class="fa-solid fa-trash-can fa-xl"></i></button>
@@ -121,15 +121,15 @@ export const Addendum = () => {
                         }
                     }/>
                     <div className="save_addendum_button">
-                        <button onClick={(evt)=>saveAddendum(evt)}>Save</button>
+                        <button className="button_save" onClick={(evt)=>saveAddendum(evt)}>Save</button>
                     </div>
                 </fieldset>
                 : ""
                 
             }
         </section>
-        <div className="add_addendum_button">
-            <button onClick={()=>setAdd(true)}><i class="fa-solid fa-plus fa-xl"></i></button>
+        <div className="add_addendum_button_container">
+            <button className="add_addendum_button" onClick={()=>setAdd(true)}><i class="fa-solid fa-plus fa-xl"></i></button>
         </div>
     </>
 }

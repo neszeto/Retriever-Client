@@ -56,10 +56,11 @@
     background-color: rgb(35 39 45);
     color: rgb(141 148 157);
     margin: 0 5% 0 5%;
+    
 }
 
 .Patient_List_Headers {
-    border: thin solid rgb(141 148 157);
+    border: thin solid rgb(49 54 60);
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding-top: 0.5%;
@@ -81,7 +82,7 @@
 }
 
 .patients {
-    border: thin solid rgb(141 148 157);
+    border: thin solid rgb(49 54 60);
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 1%;

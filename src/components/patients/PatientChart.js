@@ -55,7 +55,7 @@ export const PatientChart = () => {
                     <div className="info_line">{patient?.breed}</div>
                     <div className="info_line">Sex: {patient?.sex}</div>
                     <div className="info_line">Age: {patient?.age}yo</div>
-                    <div className="info_line">Weight: {patient?.weight}lbs</div>
+                    <div className="info_line">Weight: {patient?.weight} lbs</div>
                     <div className="info_line">Color: {patient?.color}</div>
                     <div className="info_line">Owner: <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
                 </div>
@@ -119,15 +119,15 @@ export const PatientChart = () => {
                                 </section>
                                 <section className="record_tags">
                                     <div className="medication-tags">
-                                        <div><b>Medication: </b></div> 
+                                        <div className="med_header"><b>Medication: </b></div> 
                                         {
                                         rec.medications_on_record.map(med=>{
-                                            return <div className="bullet_point">{med.medication.name} </div>
+                                            return <div className="medication">{med.medication.name} </div>
                                                 
                                         })
                                         }
                                     </div>
-                                    <div><b>Diagnosis:</b> {rec.diagnosis.diagnosis}</div>
+                                    <div className="diagnosis"><b>Diagnosis:</b> {rec.diagnosis.diagnosis}</div>
                                 </section>
                                     {
                                         rec.my_record
@@ -165,7 +165,7 @@ export const PatientChart = () => {
                         {
                             uniqueDiagnoses.map(diagnosis => {
                                 return <div className="all_summary_filters">
-                                    <button className="summary_filter"onClick={()=>filterDiagnosis(diagnosis)}>{diagnosis}</button>
+                                    <button className="summary_filter_problems"onClick={()=>filterDiagnosis(diagnosis)}>{diagnosis}</button>
                                     </div>
                             })
                         }
@@ -188,7 +188,7 @@ export const PatientChart = () => {
                         {
                             uniqueMedications.map(medication => {
                                 return <div className="all_summary_filters">
-                                    <button className="summary_filter" onClick={()=>filterMedication(medication)}>{medication}</button>
+                                    <button className="summary_filter_meds" onClick={()=>filterMedication(medication)}>{medication}</button>
                                     </div>
                             })
                         }

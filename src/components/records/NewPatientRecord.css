@@ -8,11 +8,11 @@
 .deactivated_add_button {
     background-color: grey; 
     opacity: 0.3; 
+    font-family: 'Sen', sans-serif;
 }
 
 .select_doctor {
-    display: flex;
-    justify-content: flex-end;
+    padding-bottom: 1em; 
 }
 
 .Record_form {
@@ -30,6 +30,7 @@
 .search_meds_and_add_button {
     display: flex;
     margin-top: 3%;
+    font-family: 'Sen', sans-serif;
 }
 
 .search_field {
@@ -44,13 +45,17 @@
 .medication_added_to_form {
     margin-left: 2%;
     width: 55%;
+    color: rgb(111, 69, 131);
     
 }
+
 
 .remove_med_button {
     margin-left: 1%; 
     border: none;
-    background-color: white; 
+    background-color: rgb(24 27 33);
+    color: white; 
+    cursor: pointer;
     
 }
 
@@ -58,6 +63,10 @@
     border: none;
     margin: 1%;
     padding: 1%;
+    font-family: 'Sen', sans-serif;
+    background-color: rgb(111, 69, 131);
+    cursor: pointer;
+    border-radius: 5%;
 }
 
 .searched_medications {
@@ -67,10 +76,13 @@
 .record_form_input {
     width: 50%;
     height: 1.5em;
+    font-family: 'Sen', sans-serif;
 }
 
 .record_text_field {
     height: 5em;
+    font-family: 'Sen', sans-serif;
+    background-color: rgb(221, 221, 221);
 }
 
 .record_form_headers {
@@ -88,34 +100,60 @@
     
 }
 
-.form_select {
-    margin-left: 0.5%;
-}
 
+.record_back_button {
+    font-family: 'Sen', sans-serif;
+    cursor: pointer;
+    background-color: rgb(141 148 157);
+    color: black;
+    border: none;
+    border-radius: 1%;
+    
+}
 .check_button {
     margin-left: 1%;
+    font-family: 'Sen', sans-serif;
 }
 
 .finalize_button {
     margin: 1% 0% 1% 0%;
+    font-family: 'Sen', sans-serif;
+    cursor: pointer;
     
 }
 
 .whole_record_form {
-    border: solid green; 
+    
     margin: 5% 10% 10% 10%;
-    background-color: white; 
-    color: black; 
+    color: white;
+    padding: 2em; 
+    background-color: rgb(24 27 33);
+    border: thin solid rgb(49 54 60);
+    border-radius: 1%;
 }
 
 .finalize_button_check {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid blue;
+
     padding-top: 3%;
 }
 
 .record_back_button {
     margin-left: 10%;
+}
+
+.diagnosis_date_header {
+    display: flex;
+    flex-direction: column; 
+}
+
+.presenting_complaint {
+    margin-bottom: 1em; 
+    margin-top: 1em; 
+}
+
+.double-check {
+    color: rgb(203, 4, 4);
 }

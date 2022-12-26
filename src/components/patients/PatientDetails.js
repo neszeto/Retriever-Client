@@ -70,7 +70,7 @@ export const PatientDetails = () => {
 
     return <div className="whole_edit_pet_page">
         <button className="back_to_chart" onClick={()=>navigate(`/Patient/${patientId}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
-        <div className="Edit_patient_form"><b>Edit Patient Details</b>
+        <div className="Edit_patient_form"><b>Edit Patient Details <i class="fa-solid fa-angles-right fa-sm"></i></b>
             <div className = "Pet_info">
                 <section className="pet_input">
                     <div className="line">
@@ -83,7 +83,9 @@ export const PatientDetails = () => {
                     </div>
                     <div className="line">
                         <label className="form_headers" htmlFor="owner_email">Age: </label>
-                        <input className="form_input_num" required autoFocus type="number" onChange = {changeState} name = "age" value={currentDetails.age}/> years 
+                        <div className="line_units">
+                            <input className="form_input_num" required autoFocus type="number" onChange = {changeState} name = "age" value={currentDetails.age}/> years 
+                        </div>
                     </div>
                     <div className="line">
                         <label className="form_headers" htmlFor="owner_email">Color: </label>
@@ -91,12 +93,14 @@ export const PatientDetails = () => {
                     </div>
                     <div className="line">
                         <label className="form_headers" htmlFor="owner_email">Weight: </label>
-                        <input className="form_input_num" required autoFocus type="number" onChange = {changeState} name = "weight" value={currentDetails.weight}/> lbs
+                        <div className="line_units">
+                            <input className="form_input_num" required autoFocus type="number" onChange = {changeState} name = "weight" value={currentDetails.weight}/> lbs
+                        </div>
                     </div>
                 </section>
             
                 <section>
-                    <div className="line">
+                    <div className="line_select">
                         <input type="radio" id="male" name="sex" onChange = {changeState} value="Male" checked={currentDetails.sex === "Male" ? "yes" : ""}/>
                         <label for="male">Male</label>
                         <input className="female_input" type="radio" id="female" name="sex" onChange = {changeState} value="Female" checked={currentDetails.sex === "Female" ? "yes" : ""}/>

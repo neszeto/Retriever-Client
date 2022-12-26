@@ -1,12 +1,16 @@
 
 .whole_page {
+    padding-bottom: 5%;
     
-    height: 70%; 
     
 }
 
 /*Medical Records -------------------*/
 
+.patient_charts {
+    
+    background-color: rgb(35 39 45);
+}
 .no_charts {
     display: flex;
     justify-content: center;
@@ -17,30 +21,48 @@
     
     display: flex; 
     justify-content: center;
+    
+    margin-bottom: 1%;
    
 }
 .date {
     display: flex;
     align-items: center;
-    margin-right: 3%
+    margin-right: 3%;
+    color: rgb(232, 232, 232);
 }
 
 
 .medical_record {
-    border: solid black;
-    background-color: white;
-    color: black; 
-    width: 70%;
-    margin-top: 2%;
     
+    background-color: rgb(49 54 60);
+    border-color: rgb(77, 85, 95);
+    color: rgb(232, 232, 232);
+    width: 70%;
+    margin-top: 1%;
     padding: 1%;
     border-radius: 1%;
+}
+
+.medical_record:hover {
+    width: 75%;
+    height: 65%;
+    padding: 3%;
+    transition-duration: 450ms; 
+
 }
 
 
 .Enable_Edit {
     border: none;
-    background-color: white;
+    background-color: rgb(49 54 60);
+    color: rgb(232, 232, 232);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.Enable_Edit:hover {
+    opacity: 1;
 }
 
 .edit_button {
@@ -65,7 +87,7 @@
 
 
 .doctor {
-   
+    color: white; 
     display: flex; 
     justify-content: flex-end;
 }
@@ -73,6 +95,13 @@
 .addendum {
     display: flex; 
     justify-content: flex-end;
+    color: rgb(153 228 145);
+    font-size: 12px; 
+}
+
+.addendum:hover {
+    
+    opacity: 0.5;
 }
 
 .complaint {
@@ -83,12 +112,28 @@
     padding-left: 5%; 
 }
 
+.diagnosis {
+    color: rgb(44, 90, 189)
+}
+
+.medication {
+    color: rgb(111, 69, 131);
+    font-size: 12px; 
+    margin-left: 1em; 
+    
+}
+
+.med_header {
+    color: rgb(111, 69, 131);
+}
+
 
 /* Patient chart and Patient Summary ----------*/
 
 .patient_chart_and_summary {
     display: grid;
     grid-template-columns: 3.5fr 1fr;
+    
     
 }
 
@@ -110,12 +155,13 @@
 }
 .border_line {
     border-bottom: solid thin rgb(141 148 157);
-    width: 90%;
+    width: 94%;
     text-align: center; 
 }
 
 .image {
     border-radius: 50%;
+    border: solid white; 
 }
 
 .patientName {
@@ -127,9 +173,10 @@
 
 .patientInfo {
     display: flex;
-   padding-bottom: 0.4%;
+    padding-bottom: 0.1%;
     align-items: flex-end;
     width: 100%; 
+    
     
 }
 
@@ -180,24 +227,36 @@
     margin-left: 30%;
     margin-right: 0%;
     font-family: 'Sen', sans-serif;
+    background-color: rgb(35 39 45);
+    border: none;
+    border-radius: 8%;
+    color: rgb(141 148 157);
+    cursor: pointer; 
 }
 
 .add_new {
     grid-area: one;
     width: 70%;
     font-family: 'Sen', sans-serif;
+    background-color: rgb(35 39 45);
+    border: none;
+    border-radius: 8%;
+    color: rgb(141 148 157);
+    cursor: pointer; 
 
 }
 
 .patient-chart {
     margin-left: 3%; 
     margin-top: 1%;
+    font-size: 20px; 
+    color: rgb(141 148 157);
     
 
 }
 
 .patient_chart_and_summary {
-    border: thin solid rgb(49 54 60);
+   
     margin: 0 3% 0 3%;
     
 }
@@ -210,36 +269,58 @@
 .arrow_deceased {
     padding-top: 6%;
     margin-left: 1%;
+    color: rgb(160, 3, 3); 
     
 }
 
 
 /*Patient Summary--------------------------*/
 
-.summary_filter { /*buttons*/
+.summary_filter_meds { /*buttons medications */
     border: none; 
     font-family: 'Sen', sans-serif;
+    margin: 1%;
+    background-color: rgb(111, 69, 131);
+    opacity: 0.7;
+    cursor: pointer;
+}
 
+.summary_filter_problems { /*buttons medications */
+    border: none; 
+    font-family: 'Sen', sans-serif;
+    margin: 1%;
+    background-color: rgb(44, 90, 189);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.summary_filter_meds:hover {
+    opacity: 1;
+}
+
+.summary_filter_problems:hover {
+    opacity: 1;
 }
 
 .patient_summary {
     display: flex;
     flex-direction: column;
-    border: solid black; 
+    
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 10%;
-    background-color: rgb(35 39 45);
-    border: thin solid rgb(49 54 60);
+    background-color: rgb(24 27 33);
+    border-left: thick solid rgb(15, 17, 22);
     
 
 }
 
 .patient_summary_header {
-    
+    font-size: 20px; 
     display: flex;
     justify-content: center;
-    padding: 2%
+    padding: 2%;
+    color: rgb(141 148 157);
 }
 
 .patient_summary_sub_headers {

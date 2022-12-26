@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getOwnerById, updateOwner } from "../../managers/OwnerManager"
-
+import "./OwnerDetails.css"
 
 
 
@@ -48,30 +48,40 @@ export const OwnerDetails = () => {
 
 return <>
     <section className="Owner_info">
-        <div>{currentOwner.name}</div>
-        <div>Phone: {currentOwner.phone_number}</div>
-        <div>Email: {currentOwner.email}</div>
-        <div>Address: {currentOwner.address}</div>
+        <div className="owner_name">{currentOwner.name}<button className="owner_edit_button" onClick={()=>setReveal(true)}><i class="fa-solid fa-pen-to-square fa-lg"></i></button></div>
+        <div className="owner_sub_info"><b>Phone:</b> {currentOwner.phone_number}</div>
+        <div className="owner_sub_info"><b>Email:</b> {currentOwner.email}</div>
+        <div className="owner_sub_info"><b>Address:</b> {currentOwner.address}</div>
     </section>
-    <button onClick={()=>setReveal(true)}>Edit</button>
+    
     {
         revealForm
-        ? <fieldset>
+        ? <div className="edit_owner_form">
              <section>
-                <label className="form_headers" htmlFor="owner_name">Name: </label>
-                <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="name" value={currentOwner.name}/>
-                <label className="form_headers" htmlFor="owner_email">Email: </label>
-                <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="email" value={currentOwner.email}/>
+                <div className="owner_header">
+                    <label className="form_headers" htmlFor="owner_name">Name: </label>
+                    <input className="form_input_owner" required autoFocus type="text" onChange = {changeOwnerState} name="name" value={currentOwner.name}/>
+                </div>
+                <div className="owner_header">
+                    <label className="form_headers" htmlFor="owner_phone">Phone Number: </label>
+                    <input className="form_input_owner" required autoFocus type="text" onChange = {changeOwnerState} name="phone_number" value={currentOwner.phone_number}/>
+                </div>
             </section>
             <section>
-                <label className="form_headers" htmlFor="owner_phone">Phone Number: </label>
-                <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="phone_number" value={currentOwner.phone_number}/>
-                <label className="form_headers" htmlFor="owner_address">Address: </label>
-                <input className="form_input" required autoFocus type="text" onChange = {changeOwnerState} name="address" value={currentOwner.address}/>
+                <div className="owner_header">
+                    <label className="form_headers" htmlFor="owner_email">Email: </label>
+                    <input className="form_input_owner" required autoFocus type="text" onChange = {changeOwnerState} name="email" value={currentOwner.email}/>
+                </div>
+                <div className="owner_header">
+                    <label className="form_headers" htmlFor="owner_address">Address: </label>
+                    <input className="form_input_owner" required autoFocus type="text" onChange = {changeOwnerState} name="address" value={currentOwner.address}/>
+                </div>
             </section>
-            <button onClick={(evt)=>saveOwnerInfo(evt)}>Save</button>
+            <section className="save_button_container">
+            <button className="owner_save_button"onClick={(evt)=>saveOwnerInfo(evt)}>Save</button>
+            </section>
 
-        </fieldset>
+        </div>
         : ""
     }
     

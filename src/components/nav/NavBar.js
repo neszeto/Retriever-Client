@@ -38,7 +38,7 @@ export const NavBar = () => {
                                             <button class="dropbtn"><i class="fa-solid fa-circle-chevron-down"></i>
                                             </button>
                                             <div class="dropdown-content">
-                                                <Link style={{textDecoration: 'none'}} to='/doctors'><i class="fa-solid fa-user-doctor fa-sm"></i> Doctors</Link>
+                                                <Link style={{textDecoration: 'none'}} className="nav-item" to='/doctors'><i class="fa-solid fa-user-doctor fa-sm"></i> Doctors</Link>
                                                 <Link style={{textDecoration: 'none'}} className="nav-item" to='/'><i class="fa-solid fa-paw fa-sm"></i> Patients</Link>
                                                 <Link className="nav-item" to='/login'
                                                         onClick={() => {
