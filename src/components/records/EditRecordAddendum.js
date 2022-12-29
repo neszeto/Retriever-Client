@@ -50,7 +50,10 @@ export const Addendum = () => {
         .then(()=> navigate(`/Patient/${currentRecord.patient}`))
     }
    
-
+    let subjectiveBulletPoints = currentRecord?.subjective?.split(". ")
+    let objectiveBulletPoints = currentRecord?.objective?.split(". ")
+    let assessmentBulletPoints = currentRecord?.assessment?.split(". ")
+    let planBulletPoints = currentRecord?.plan?.split(". ")
     return <>
         <div className="back_button_container">
             <button className="back_button" onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
@@ -62,35 +65,58 @@ export const Addendum = () => {
                 <div className="SO">
                     <div className="section">
                         <div><b>Subjective:</b></div>
-                        <div className="bullet_point">{currentRecord?.subjective}</div>
+                        <ul>
+                        {
+                            subjectiveBulletPoints?.map(point=><li>{point}</li>)
+                        }
+                        </ul>
                     </div>
                     <div className="section">
                         <div><b>Objective</b></div>
-                        <div className="bullet_point">{currentRecord?.objective}</div>
+                        <ul>
+                        {
+                            objectiveBulletPoints?.map(point=><li>{point}</li>)
+                        }
+                        </ul>
                     </div>
                 </div>
                 <div className="SO">
                     <div>
                         <div><b>Assessment:</b></div>
-                        <div className="bullet_point">{currentRecord?.assessment}</div>
+                        <ul>
+                        {
+                            assessmentBulletPoints?.map(point=><li>{point}</li>)
+                        }
+                        </ul>
                     </div>
                     <div>
                         <div><b>Plan:</b></div>
-                        <div className="bullet_point">{currentRecord?.plan}</div>
+                        <ul>
+                        {
+                            planBulletPoints?.map(point=><li>{point}</li>)
+                        }
+                        </ul>
                     </div>
                 </div>
 
             </section>
             <section className="record_tags">
-                <div className="medication-tags">
-                    <div><b>Medication: </b></div> 
+            <div className="med_header_tags">
+                
+                <div className="med_header"><b>Medication: </b></div> 
+                    <div className="medication-tags">
                     {
                     currentRecord?.medications_on_record?.map(med=>{
-                        return <div className="record_medications">{med?.medication?.name} </div>
+                        return <mark className="mark_medication">{med?.medication?.name} </mark>
                     })
                     }
                 </div>
-                <div><b>Diagnosis:</b> {currentRecord?.diagnosis?.diagnosis}</div>
+            </div>
+            <div className="diagnosis">
+                <div><b>Diagnosis:</b></div>
+                <div className="diagnosis_on_chart"><mark className="mark_diagnosis">{currentRecord?.diagnosis?.diagnosis}</mark></div>
+            </div>
+       
             </section>
             <div className="delete_record">
                 <button className="record_delete_button"onClick={()=> deleteRecord(currentRecord.id)}><i class="fa-solid fa-trash-can fa-xl"></i></button>

@@ -38,7 +38,9 @@ export const PatientChart = () => {
         const filteredRecords = record.filter(rec=>rec.medications_on_record.find(med=>med.medication.name === medication))
         setFiltered(filteredRecords)
    }
-    
+
+
+
     return <section className="whole_page">
             <section className="pet_header_information">
                 <div className="image_name_breed">
@@ -82,6 +84,11 @@ export const PatientChart = () => {
             : <section className="patient_charts">
                 {
                     filteredRecord.map(rec=>{
+                        let subjectiveBulletPoints = rec.subjective.split(". ")
+                        let objectiveBulletPoints = rec.objective.split(". ")
+                        let assessmentBulletPoints = rec.assessment.split(". ")
+                        let planBulletPoints = rec.plan.split(". ")
+
                         return <section className="record_date">
                             <section className="date">{rec.date}</section>
                             <section className="medical_record">
@@ -99,21 +106,37 @@ export const PatientChart = () => {
                                     <div className="SO">
                                         <div className="section">
                                             <div><b>Subjective:</b></div>
-                                            <div className="bullet_point">{rec.subjective}</div>
+                                            <ul>
+                                            {
+                                                subjectiveBulletPoints.map(point=><li>{point}</li>)
+                                            }
+                                            </ul>
                                         </div>
                                         <div className="section">
                                             <div><b>Objective:</b></div>
-                                            <div className="bullet_point">{rec.objective}</div>
+                                            <ul>
+                                            {
+                                                objectiveBulletPoints.map(point=><li>{point}</li>)
+                                            }
+                                            </ul>
                                         </div>
                                     </div>
                                     <div className="SO">
                                         <div>
                                             <div><b>Assessment:</b></div>
-                                            <div className="bullet_point">{rec.assessment}</div>
+                                            <ul>
+                                            {
+                                                assessmentBulletPoints.map(point=><li>{point}</li>)
+                                            }
+                                            </ul>
                                         </div>
                                         <div>
                                             <div><b>Plan:</b></div>
-                                            <div className="bullet_point">{rec.plan}</div>
+                                            <ul>
+                                            {
+                                                planBulletPoints.map(point=><li>{point}</li>)
+                                            }
+                                            </ul>
                                         </div>
                                     </div>
                                 </section>

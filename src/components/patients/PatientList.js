@@ -98,17 +98,16 @@ export const PatientList = () => {
         </section>
         <section className="all_filters">
             <section className="search_inputs">
-                <label className="search" htmlFor="search_terms"><i class="fa-solid fa-magnifying-glass"></i></label>
-                <input 
-                onChange={
-                    (evt) => {setSearch2(evt.target.value)}
-                }type="text" name="search_terms" className="search_input_field" placeholder=" search by diagnosis or medication..."/>
-            
-                <label className="search" htmlFor="search_terms"></label>
+            <label className="search" htmlFor="search_terms"><i class="fa-solid fa-magnifying-glass"></i></label>
                 <input 
                 onChange={
                     (evt) => {setSearch(evt.target.value)}
                 }type="text" name="search_terms" className="search_input_field" placeholder=" search by client or patient..."/>
+                <label className="search" htmlFor="search_terms"></label>
+                <input 
+                onChange={
+                    (evt) => {setSearch2(evt.target.value)}
+                }type="text" name="search_terms" className="search_input_field" placeholder=" search by diagnosis or medication..."/>
             </section>
             <section className="radio_buttons">
                
