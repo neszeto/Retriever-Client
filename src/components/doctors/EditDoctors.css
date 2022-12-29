@@ -1,0 +1,66 @@
+.whole_edit_doctor {
+    margin: 5% 10% 0% 10%;
+    background-color: rgb(24 27 33);
+    border: thin solid rgb(49 54 60);
+    border-radius: 1%;
+    padding: 3%;
+}
+
+.image_bio_edit {
+   
+    display: flex; 
+    margin: 5% 0 5% 1%;
+    
+
+    align-items: center; 
+}
+
+.doctor_upload_preview {
+ 
+    display: flex; 
+    align-items: center; 
+}
+
+.doctor_upload_button {
+    width: 120px;
+    font-size: 12px;
+    font-family: 'Sen', sans-serif;
+    margin-left: 1%;
+}   
+
+.doctor_image_preview_header {
+    font-size: 12px; 
+
+    width: 30%;
+    padding-bottom: 42%;
+}
+
+.bio_header {
+    display: flex;
+    flex-direction: column; 
+    margin-left: 5%;
+    
+    width: 50%;
+    height: 100%;
+}
+
+.text_bio_doctor {
+    height: 10em; 
+    padding: 1%;
+    font-family: 'Sen', sans-serif;
+}
+
+.update_doctor_button_container {
+
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.update_doctor_button {
+    font-family: 'Sen', sans-serif;
+}
+
+.form_deactivate {
+    margin-left: 1%;
+    font-size: 14px;
+}

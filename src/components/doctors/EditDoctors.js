@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getDoctorById, updateDoctor } from "../../managers/DoctorManager"
-import { getUsers } from "../../managers/UsersManager"
+import "./EditDoctors.css"
 
 export const EditDoctors = () => {
     const { doctorId } = useParams()
@@ -45,21 +45,25 @@ export const EditDoctors = () => {
         .then(()=>navigate(`/doctors`))
         
     }
-    return <>
-        <div>Edit Doctor Profile</div>
-        <fieldset>
-            <div className="upload_preview">
-                <button className="form_upload_button" onClick={(evt) => showWidget(evt)}>Upload Image</button>
-                <div>Image Preview: </div>
-                <img src={doctor.image_url} width="100px"/>
+    return <section className="whole_edit_doctor">
+        <div>Edit Doctor Profile <i class="fa-solid fa-angles-right fa-sm"></i></div>
+        <div className="image_bio_edit">
+            <div className="doctor_upload_preview">
+                <div className="doctor_image_preview_header">Image Preview: </div>
+                <img src={doctor.image_url} width="200px"/>
+                <button className="doctor_upload_button" onClick={(evt) => showWidget(evt)}>Upload Image</button>
             </div>
-            <label className="form_bio" htmlFor="bio">Veterinarian Bio</label>
-            <textarea value={doctor.bio} id="bio" className="text_bio"  onChange={(evt) => {
-                                const copy = structuredClone(doctor)
-                                copy.bio = evt.target.value
-                                setDoctor(copy)
-                            }}/>
-            <label className="form_active" htmlFor="active">Deactivate Profile
+            <div className="bio_header">
+                <label className="form_bio" htmlFor="bio">Veterinarian Bio</label>
+                <textarea value={doctor.bio} id="bio" className="text_bio_doctor"  onChange={(evt) => {
+                                    const copy = structuredClone(doctor)
+                                    copy.bio = evt.target.value
+                                    setDoctor(copy)
+                                }}/>
+            </div>
+        </div>
+        <div>
+            <label className="form_deactivate" htmlFor="active">Deactivate Profile
                 <input onChange = {() => {
                 {
                     deactivate
@@ -68,9 +72,11 @@ export const EditDoctors = () => {
                 }
             } } id="active" type="checkbox"/>
             </label>
-        </fieldset>
-        <button onClick={onUpdate}>Update</button>
+        </div>
+        <div className="update_doctor_button_container">
+            <button className="update_doctor_button" onClick={onUpdate}>Update</button>
+        </div>
 
-    </>
+    </section>
 
 }

@@ -37,6 +37,7 @@
     margin-top: -6px;
     margin-left: 5px;
     border: solid white; 
+  
     
 }
 
@@ -78,6 +79,7 @@
 .topnav a:hover, .dropdown:hover .dropbtn {
     background-color: #555;
     color: white;
+    cursor: pointer; 
 }
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
 .dropdown:hover .dropdown-content {

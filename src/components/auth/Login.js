@@ -1,7 +1,8 @@
 import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
-
+import Retriever from "../assets/retrievingdog.jpeg"
+import "./Login.css"
 
 
 export const Login = () => {
@@ -9,6 +10,7 @@ export const Login = () => {
     const password = useRef()
     const invalidDialog = useRef()
     const navigate = useNavigate()
+    
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -28,7 +30,12 @@ export const Login = () => {
             })
     }
 
-    return (
+    return <>
+    <section className="link--register">
+        <button className="register_button" onClick={() => navigate("/register")}>REGISTER</button>
+    </section>
+    <div className="image_signin">
+        <img className="retriever_image" src={Retriever} />
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={invalidDialog}>
                 <div>Username or password was not valid.</div>
@@ -36,26 +43,30 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Retriever</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputUsername"> Username</label>
-                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
-                    </fieldset>
-                    <fieldset style={{
-                        textAlign: "center"
-                    }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
-                    </fieldset>
+                    <div className="title_login">
+                        <div className="signin_name">Retriever</div>
+                        <div className="signin_tag">Veterinary Software</div>
+                        <section className="username_password">
+                            <div className="login_input_username">
+                                <label className="user_icon" htmlFor="inputUsername"> <i class="fa-solid fa-user fa-sm"></i> </label>
+                                <input ref={username} type="username" id="username" className="login_input" placeholder="Username" required autoFocus />
+                            </div>
+                            <div>
+                                <label className="user_icon" htmlFor="inputPassword"> <i class="fa-solid fa-key fa-sm"></i> </label>
+                                <input ref={password} type="password" id="password" className="login_input" placeholder="Password" required />
+                            </div>
+                        </section>
+                    </div>
+                    <div className="sign_in_button_container">
+                        <div style={{
+                            textAlign: "center"
+                        }}>
+                            <button className="signin_button" type="submit">SIGN IN</button>
+                        </div>
+                    </div>
                 </form>
             </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
         </main>
-    )
+    </div>
+    </>
 }

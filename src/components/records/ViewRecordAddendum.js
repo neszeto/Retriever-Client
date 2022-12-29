@@ -23,7 +23,7 @@ export const ViewAddendum = () => {
     
 
     return <>
-    <div className="back_button">
+    <div className="back_button_container">
         <button onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>
     </div>
     <section className="medical_record_edit">
@@ -64,7 +64,7 @@ export const ViewAddendum = () => {
             <div><b>Diagnosis:</b> {currentRecord?.diagnosis?.diagnosis}</div>
         </section>
     </section>
-    <section className="Addendums">
+    <section className="Addendums_view">
         <div>{currentRecord?.record_addendums?.map(addendum=>{
             return <section className="single_addendum">
                     <div>This addendum was created on {addendum.created_on}</div>

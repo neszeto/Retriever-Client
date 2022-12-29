@@ -46,7 +46,7 @@ export const OwnerDetails = () => {
 
 
 
-return <>
+return <section className="whole_owner_page">
     <section className="Owner_info">
         <div className="owner_name">{currentOwner.name}<button className="owner_edit_button" onClick={()=>setReveal(true)}><i class="fa-solid fa-pen-to-square fa-lg"></i></button></div>
         <div className="owner_sub_info"><b>Phone:</b> {currentOwner.phone_number}</div>
@@ -85,5 +85,5 @@ return <>
         : ""
     }
     
-</>
+</section>
 }

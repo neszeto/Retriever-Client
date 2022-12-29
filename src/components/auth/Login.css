@@ -1,0 +1,123 @@
+.image_signin {
+    
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    
+    
+}
+
+.retriever_image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    
+
+}
+
+.title_login {
+    
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+    width: 16em;
+    background-color: rgb(41, 40, 39);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+
+}
+
+
+
+
+.username_password {
+   
+    border-radius: 3%;
+    margin: 5%;
+    background-color:white; 
+    color: rgb(24 27 33);
+    width: 12em;
+}
+
+.login_input {
+    font-family: 'Sen', sans-serif;
+    border: none; 
+    padding: 0.5em;
+    
+}
+
+.login_input_username {
+    font-family: 'Sen', sans-serif;
+    border: none; 
+    border-bottom: thin solid rgb(141 148 157);
+    
+}
+
+.user_icon {
+    color: rgb(24 27 33);
+    margin-left: 3%;
+}
+
+.signin_button {
+    width: 100%;
+    height: 3em;
+    border: none; 
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    background-color: rgb(137, 205, 130);
+    cursor: pointer; 
+    font-family: 'Sen', sans-serif;
+    padding-top: 1.5em;
+    padding-bottom: 2.5em;
+    color: rgb(24 27 33);
+    font-size: 12px; 
+    font-weight: bold;
+}
+
+.container--login {
+  
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    border-radius: 3%;
+}
+
+.signin_name {
+    font-family: 'Sen', sans-serif;
+    font-size: 40px;
+    padding-top: 1em;
+   
+}
+
+.signin_tag {
+    font-size: 15px; 
+    padding-bottom: 1em;
+    color: rgb(190, 190, 190); 
+}
+.link--register {
+   
+    display: flex;
+    justify-content: flex-end; 
+}
+.register_button {
+    border: thin solid white;
+    background-color: transparent; 
+    border-radius: 5%;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    padding: 0.5em;
+    font-size: 11px;
+    cursor: pointer; 
+    margin-top: 2em; 
+    margin-right: 4em;
+}

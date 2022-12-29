@@ -1,0 +1,103 @@
+.doctor_image_bio {
+    border: thin solid rgb(49 54 60);
+    display: flex; 
+    width: 800px; 
+    margin-left: 15%;
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(24 27 33);
+    border-radius: 1%;
+
+    
+}
+
+.vets_header {
+    font-size: 20px;
+    color: rgb(141 148 157);
+    margin: 2%;
+}
+
+.doctor_image_active {
+    
+    width: 300px;
+    height: auto;
+    
+}
+
+.doctor_name {
+    padding: 3%;
+}
+
+.doctor_image_container {
+    border-right: solid black; 
+    color: rgb(172, 172, 172);
+    background-color: white; 
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.doctor_bio_container {
+    padding: 1em;
+}
+
+.doctor_edit_button_container {
+    
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5%;
+     
+}
+
+.doctor_edit_button {
+    background-color: rgb(24 27 33);
+    color: white;
+    opacity: 0.5;
+    border: none; 
+}
+
+.doctor_edit_button:hover {
+    opacity: 1; 
+}
+
+.border_line_doctors {
+    border-top: thin solid rgb(49 54 60);
+    padding: 2%;
+    margin-left: 13%;
+    margin-top: 4%;
+    width: 830px;
+}
+
+/*inactive section-----------------------------*/
+.all_inactive_section {
+    display: flex; 
+
+    align-items: center; 
+    padding-left: 8.8%
+}
+.doctor_image_bio_inactive {
+    border: thin solid rgb(49 54 60);
+    display: flex; 
+    width: 800px; 
+    
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(24 27 33);
+    border-radius: 1%;
+    opacity: 0.2;
+    
+}
+
+.doctor_activate_button {
+
+    margin: 1%;
+     
+}
+
+.activate_button {
+    font-family: 'Sen', sans-serif;
+}

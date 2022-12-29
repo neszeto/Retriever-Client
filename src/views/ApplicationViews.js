@@ -15,11 +15,13 @@ import { Doctors } from "../components/doctors/DoctorList"
 import { EditDoctors } from "../components/doctors/EditDoctors"
 
 
+
 export const ApplicationViews = () => {
     return <>
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+        
             <Route element={<Authorized />}>
                 {/* Add Routes here */}
                 <Route path="/" element={<NavBar />}>

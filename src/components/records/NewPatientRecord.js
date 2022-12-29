@@ -144,7 +144,7 @@ export const NewPatientRecord = () => {
    <section className="whole_record_form"> 
    <section>
     <section className="Record_form">
-        <div>New Medical Record for <b>{patient?.name}</b></div>
+        <div>New Medical Record for <b>{patient?.name} <i class="fa-solid fa-angles-right fa-sm"></i></b></div>
         
             <div className="select_doctor">
                 <label className="form_written_by" htmlFor="doctor">Medical Record Written By: </label>

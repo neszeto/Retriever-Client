@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { activateDoctor } from "../../managers/DoctorManager"
 import { getUsers } from "../../managers/UsersManager"
+import "./DoctorList.css"
 
 
 export const Doctors = () => {
@@ -28,41 +29,50 @@ export const Doctors = () => {
 
     return <section className="all_doctors">
         <section>
-            <div>Active Veterinarians</div>
+            <div className="vets_header">Active Veterinarians</div>
+            <div>
             {
                 users.map(user=>{
                     if (user?.is_staff === false && user?.users_that_are_doctors[0]?.active === true) {
                         return <>
-                            <section>
-                                <img className="image" src={user.users_that_are_doctors[0].image_url} width="300px" alt=""></img>
-                                <div>Dr. {user?.first_name} {user?.last_name}</div>
-                                </section>
-                            <section>
-                                <div>{user?.users_that_are_doctors[0]?.bio}</div>
+                        <section className="doctor_image_bio">
+                            <section className="doctor_image_container">
+                                <img className="doctor_image_active" src={user.users_that_are_doctors[0].image_url} alt=""></img>
+                                <div className="doctor_name">Dr. {user?.first_name} {user?.last_name}</div>
                             </section>
-                            <button onClick={()=>navigate(`/doctors/${user.users_that_are_doctors[0].id}/edit`)}>edit</button>
-                           
+                            <section className="doctor_bio_container">
+                                <div>{user?.users_that_are_doctors[0]?.bio}</div>
+                                <div className="doctor_edit_button_container">
+                                    <button className="doctor_edit_button" onClick={()=>navigate(`/doctors/${user.users_that_are_doctors[0].id}/edit`)}><i class="fa-solid fa-pen-to-square fa-xl"></i></button>
+                                </div>
+                            </section>
+                        </section>
                         </>
                     }
                 })
             }
+            </div>
            
         </section>
         <section>
-            <div>Inactive Veterinarians</div>
+            <div className="border_line_doctors"></div>
             {
                 users.map(user=>{
                     if (user?.is_staff === false && user?.users_that_are_doctors[0]?.active === false) {
-                        return <>
-                            <section>
-                                <img className="image" src={user.users_that_are_doctors[0].image_url} width="300px" alt=""></img>
-                                <div>Dr. {user?.first_name} {user?.last_name}</div>
-                                </section>
-                            <section>
+                        return <section className="all_inactive_section">
+                        <div className="doctor_activate_button">
+                            <button className="activate_button" onClick={()=>activate(user.users_that_are_doctors[0].id)}>Activate</button>
+                        </div>
+                        <section className="doctor_image_bio_inactive">
+                            <section className="doctor_image_container">
+                                <img className="doctor_image_inactive" src={user.users_that_are_doctors[0].image_url} width="300px" alt=""></img>
+                                <div className="doctor_name">Dr. {user?.first_name} {user?.last_name}</div>
+                            </section>
+                            <section className="doctor_bio_container">
                                 <div>{user?.users_that_are_doctors[0]?.bio}</div>
                             </section>
-                            <button onClick={()=>activate(user.users_that_are_doctors[0].id)}>Activate</button>
-                        </>
+                        </section>
+                    </section>
                     }
                 })
             }
