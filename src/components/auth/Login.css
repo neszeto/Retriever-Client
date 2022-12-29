@@ -121,3 +121,8 @@
     margin-top: 2em; 
     margin-right: 4em;
 }
+
+.register_button:hover {
+    border: thin solid rgb(153 228 145);
+    color: rgb(153 228 145);
+}

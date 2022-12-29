@@ -113,19 +113,47 @@
 }
 
 .diagnosis {
-    color: rgb(44, 90, 189)
+    display: flex;
 }
 
-.medication {
-    color: rgb(111, 69, 131);
-    font-size: 12px; 
-    margin-left: 1em; 
+.mark_medication {
+    background-color: rgb(203 106 81);
+    margin-bottom: 0.2em;
+    margin-left: 0.5em;
+    color: white; 
+    padding: 0.1em;
+    border-radius: 1%;
+    font-size: 12px;
+    
     
 }
 
-.med_header {
-    color: rgb(111, 69, 131);
+.medication-tags {
+    display: flex;
+    flex-direction: column; 
 }
+
+.med_header_tags {
+    display: flex;
+}
+
+.diagnosis_on_chart {
+    margin-left: 0.5em;
+    height: auto;
+    
+}
+
+.mark_diagnosis {
+    background-color: rgb(205 160 20);
+    margin-bottom: 0.2em;
+    margin-left: 0.2em;
+    padding: 0.1em;
+    border-radius: 1%;
+    color: white; 
+    
+}
+
+
 
 
 /* Patient chart and Patient Summary ----------*/
@@ -280,7 +308,7 @@
     border: none; 
     font-family: 'Sen', sans-serif;
     margin: 1%;
-    background-color: rgb(111, 69, 131);
+    background-color:rgb(203 106 81);
     opacity: 0.7;
     cursor: pointer;
 }
@@ -289,7 +317,7 @@
     border: none; 
     font-family: 'Sen', sans-serif;
     margin: 1%;
-    background-color: rgb(44, 90, 189);
+    background-color: rgb(205 160 20);
     opacity: 0.7;
     cursor: pointer;
 }

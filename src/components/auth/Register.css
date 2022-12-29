@@ -1,0 +1,54 @@
+
+.whole_register_form {
+    background-color: rgb(24 27 33);
+    border: thin solid rgb(49 54 60);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin: 5em 15em 0em 15em;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    border-radius: 3%;
+}
+
+
+.register_input {
+    display: flex; 
+    flex-direction: column; 
+   
+    
+}
+
+.form-control-register {
+    
+    padding: 0.5em;
+}
+
+.register_header {
+   
+    display: flex; 
+    justify-content: flex-start; 
+}
+
+.hospital_manager {
+    margin: 1em;
+}
+
+.register_newuser_button {
+    font-family: 'Sen', sans-serif;
+    margin: 1em;
+    cursor: pointer; 
+}
+
+.register_login_link {
+    color: rgb(128, 172, 123);
+    text-decoration: none;
+    margin-left: 0.5em;
+}
+
+.register_login_link:hover {
+    color: rgb(153 228 145);
+    text-decoration: underline;
+    text-underline-offset: 0.4rem; 
+    text-decoration-thickness: 1px; 
+}

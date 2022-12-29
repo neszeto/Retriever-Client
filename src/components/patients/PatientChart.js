@@ -118,16 +118,23 @@ export const PatientChart = () => {
                                     </div>
                                 </section>
                                 <section className="record_tags">
-                                    <div className="medication-tags">
+                                    <div className="med_header_tags">
                                         <div className="med_header"><b>Medication: </b></div> 
+                                        <div className="medication-tags">
                                         {
                                         rec.medications_on_record.map(med=>{
-                                            return <div className="medication">{med.medication.name} </div>
+                                            return <mark className="mark_medication">{med.medication.name} </mark>
                                                 
                                         })
                                         }
+                                        </div>
                                     </div>
-                                    <div className="diagnosis"><b>Diagnosis:</b> {rec.diagnosis.diagnosis}</div>
+
+                                    <div className="diagnosis">
+                                        <div><b>Diagnosis:</b></div>
+                                        <div className="diagnosis_on_chart"><mark className="mark_diagnosis">{rec.diagnosis.diagnosis}</mark></div>
+                                    </div>
+                                   
                                 </section>
                                     {
                                         rec.my_record

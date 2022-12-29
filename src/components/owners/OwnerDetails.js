@@ -47,7 +47,7 @@ export const OwnerDetails = () => {
 
 
 return <section className="whole_owner_page">
-    <section className="Owner_info">
+    <section className="Owner_details_info">
         <div className="owner_name">{currentOwner.name}<button className="owner_edit_button" onClick={()=>setReveal(true)}><i class="fa-solid fa-pen-to-square fa-lg"></i></button></div>
         <div className="owner_sub_info"><b>Phone:</b> {currentOwner.phone_number}</div>
         <div className="owner_sub_info"><b>Email:</b> {currentOwner.email}</div>

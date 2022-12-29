@@ -209,7 +209,7 @@ export const NewPatientRecord = () => {
                 <div className="added_medications"><b>Patient Medications:</b>
                 {
                     addedMeds || !addedMeds
-                    ? <div className="medication_added_to_form">{patientMedications.current.map(medication=> <div>{medication.name}<button className="remove_med_button" onClick={
+                    ? <div className="medication_added_to_form">{patientMedications.current.map(medication=> <div className="med_added_to_record"><mark className="mark_record_med">{medication.name}</mark><button className="remove_med_button" onClick={
                         ()=>{
                             const index = patientMedications.current.findIndex(med => {
                                 return med.id === medication.id;

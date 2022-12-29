@@ -82,13 +82,13 @@
     border: thin solid rgb(49 54 60);
     display: flex; 
     width: 800px; 
-    
     margin-top: 1%;
     justify-content: center;
     align-items: center; 
     background-color: rgb(24 27 33);
     border-radius: 1%;
     opacity: 0.2;
+    margin-bottom: 1%;
     
 }
 

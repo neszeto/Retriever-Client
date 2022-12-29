@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
+import "./Register.css"
 
 
 export const Register = () => {
@@ -40,7 +41,7 @@ export const Register = () => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="whole_register_form" style={{ textAlign: "center" }}>
 
             <dialog className="dialog dialog--password" ref={passwordDialog}>
                 <div>Passwords do not match</div>
@@ -49,33 +50,31 @@ export const Register = () => {
 
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Register an account</h1>
-                <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputUsername">Username</label>
-                    <input ref={username} type="text" name="username" className="form-control" placeholder="Username" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputPassword"> Password </label>
-                    <input ref={password} type="password" name="password" className="form-control" placeholder="Password" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
-                    <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="verifyPassword"> Email </label>
-                    <input ref={email} name="email" className="form-control" placeholder="Email" />
-                </fieldset>
-                <fieldset style={{
-                    textAlign: "center"
-                }}>
+                <div className="register_input">
+                    <label className="register_header" htmlFor="firstName"> First Name </label>
+                    <input ref={firstName} type="text" name="firstName" className="form-control-register" placeholder="First name" required autoFocus />
+                </div>
+                <div className="register_input">
+                    <label className="register_header" htmlFor="lastName"> Last Name </label>
+                    <input ref={lastName} type="text" name="lastName" className="form-control-register" placeholder="Last name" required />
+                </div>
+                <div className="register_input">
+                    <label className="register_header" htmlFor="inputUsername">Username</label>
+                    <input ref={username} type="text" name="username" className="form-control-register" placeholder="Username" required />
+                </div>
+                <div className="register_input">
+                    <label className="register_header" htmlFor="inputPassword"> Password </label>
+                    <input ref={password} type="password" name="password" className="form-control-register" placeholder="Password" required />
+                </div>
+                <div className="register_input">
+                    <label className="register_header" htmlFor="verifyPassword"> Verify Password </label>
+                    <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control-register" placeholder="Verify password" required />
+                </div>
+                <div className="register_input">
+                    <label className="register_header" htmlFor="verifyPassword"> Email </label>
+                    <input ref={email} name="email" className="form-control-register" placeholder="Email" />
+                </div>
+                <div className="hospital_manager" >
                     <label className="form_manager" htmlFor="manager">Hospital Manager
                         <input onChange = {() => {
                         const copy = structuredClone(isStaff)
@@ -86,11 +85,11 @@ export const Register = () => {
                         }
                     } } id="manager" type="checkbox" onSubmit={handleRegister}/>
                     </label>
-                    <button className="btn btn-1 btn-sep icon-send" type="submit">Register</button>
-                </fieldset>
+                </div>
+                <button className="register_newuser_button" type="submit">Register</button>
             </form>
             <section className="link--register">
-                Already registered? <Link to="/login">Login</Link>
+                Already registered? <Link className="register_login_link" to="/login">Login</Link>
             </section>
         </main>
     )
