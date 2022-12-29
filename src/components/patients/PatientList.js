@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { getPatients } from "../../managers/PatientManager"
+import Record from "../assets/medical_records.webp"
 import "./PatientList.css"
 
 
@@ -92,7 +93,11 @@ export const PatientList = () => {
     )
     
 
-    return <section className="whole-list-page">
+    return <>
+    
+    <section className="whole-list-page">
+    <img className="medical_record_image" src={Record} alt=""/>
+    <div className="under_image">
         <section className="new_patient_button_box">
             <button className="new_patient_button" onClick = {() => {navigate(`/newPatientForm`)}}><i class="fa-solid fa-plus fa-sm"></i> new patient</button>
         </section>
@@ -138,9 +143,10 @@ export const PatientList = () => {
                 }
             </section>
         </section>
+        </div>
         </section>
+        </>
     
     
 }
 
-/**/

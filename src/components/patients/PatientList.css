@@ -4,6 +4,12 @@
 
 }
 
+.under_image {
+    margin-top: 30%;
+    
+    margin-bottom: 5%;
+}
+
 .all_filters {
     display: flex;
     justify-content: space-between;
@@ -33,9 +39,7 @@
     font-family: 'Sen', sans-serif;
 }
 
-.new_patient_button:hover {
-    box-shadow: black 0px 0px 25px 10px;
-}
+
 
 .search_input_field {
     width: 19em;
@@ -123,7 +127,7 @@
     cursor: pointer;
     font-family: 'Sen', sans-serif;
     color: black; 
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 10px 10px 0;
     
     
 }
@@ -134,7 +138,7 @@
     transition-duration: 300ms;
     cursor: pointer;
     background-color: rgb(207 208 208);
-    border-radius: 5px 0 0 5px;
+    border-radius: 10px 0 0 10px;
     color: rgb(141 148 157);
     font-family: 'Sen', sans-serif;
     
@@ -148,7 +152,7 @@
     transition-duration: 300ms;
     cursor: pointer;
     background-color: rgb(207 208 208);
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 10px 10px 0;
     color: rgb(141 148 157);
     
     
@@ -183,4 +187,17 @@
 
 .link:hover {
     color: rgb(153 228 145) 
+}
+
+.medical_record_image {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:  60%;
+    opacity: 0.5;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+
+    
 }

@@ -32,7 +32,7 @@ export const NavBar = () => {
                         {
                             isStaff()
                             ? <div className="logged_in_user">
-                                <div>Welcome, {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                                <div className="doctor_greeting">Welcome, {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
                                 <div class="topnav" id="myTopnav">
                                         <div class="dropdown">
                                             <button class="dropbtn"><i class="fa-solid fa-circle-chevron-down"></i>
@@ -50,7 +50,7 @@ export const NavBar = () => {
                                     </div>
                                 </div>
                             : <div className="logged_in_user">
-                                <div>Welcome, Dr. {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
+                                <div className="doctor_greeting">Welcome, Dr. {loggedinUser[0]?.first_name} {loggedinUser[0]?.last_name}</div>
                                
                                 <img className="nav_image" src={loggedinUser[0]?.users_that_are_doctors[0]?.image_url} />
                                 <div class="topnav" id="myTopnav">
