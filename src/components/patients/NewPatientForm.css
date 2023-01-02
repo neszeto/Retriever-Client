@@ -71,12 +71,12 @@
 }
 
 .whole_new_pet_form {
-    margin: 3%;
+    margin:10% 3% 3% 3%;
     background-color: rgb(24 27 33);
     border: thin solid rgb(49 54 60);
     border-radius: 1%;
     padding: 3%;
-    
+
     
 }
 

@@ -37,6 +37,7 @@
     flex-basis: 20%;
     list-style-type: none;
     border: none;
+    font-size: 13px;
 }
 
 
@@ -85,6 +86,7 @@
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 3%;
   }
 
   /* Add a dark background on topnav links and the dropdown button on hover */
