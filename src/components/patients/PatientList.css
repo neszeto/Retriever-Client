@@ -5,7 +5,7 @@
 }
 
 .under_image {
-    margin-top: 20%;
+    margin-top: 7%;
     position: absolute;
     z-index: 1;
     margin-bottom: 10%;
@@ -31,12 +31,11 @@
 
 .new_patient_button {
     background-color: rgb(35 39 45);
-    border: none; 
+    border: thin solid rgb(49 54 60);
     padding: 0.2%;
     padding-left: 0.3%;
     padding-right: 0.3%;
-    border-radius: 2%;
-    border:thin solid  black;
+    border-radius: 3%;
     color: rgb(141 148 157);
     cursor: pointer;
     font-family: 'Sen', sans-serif;
@@ -51,6 +50,7 @@
     border: none; 
     height: 1.7em; 
     font-family: 'Sen', sans-serif;
+    border-radius: 3%;
     
 }
 .search_inputs {
@@ -84,7 +84,6 @@
     display: flex;
     justify-content: center;
     margin: 0.2%;
-    
     font-size: 14px
 }
 
@@ -199,9 +198,43 @@
     top: 0;
     left: 0;
     width: 100%;
-    height:  50%;
+    height:  70%; /*40%*/
     opacity: 0.5;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
 
     
 }
+
+/*Patient Stats--------------------*/
+
+.patients_stats {
+   
+    display: flex; 
+    margin-left: 10%;
+    padding-bottom: 5%;
+    
+
+}
+
+.total_active {
+    color: rgb(141 148 157);
+    margin-right: 4%;
+    padding: 3% 2% 3% 2%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color:rgb(35 39 45); 
+    border-radius: 3%;
+    box-shadow: 3px 3px 10px black;
+}
+
+
+
+.number {
+    font-size: 40px;
+    
+    color: rgb(153 228 145);
+    
+}
+
+

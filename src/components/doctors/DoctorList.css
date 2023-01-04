@@ -1,3 +1,9 @@
+.all_doctors {
+    
+    margin-top: 5%;
+}
+
+
 .doctor_image_bio {
     border: thin solid rgb(49 54 60);
     display: flex; 
@@ -13,9 +19,9 @@
 }
 
 .vets_header {
-    font-size: 20px;
+    font-size: 23px;
     color: rgb(141 148 157);
-    margin: 2%;
+    margin: 2% 2% 4% 2%;
 }
 
 .doctor_image_active {

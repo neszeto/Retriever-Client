@@ -1,6 +1,31 @@
 import { getToken } from "./AuthManager"
 
+export const getTotalActivePatients = () => {
+    return fetch("http://localhost:8000/patients?total", {
+        headers:{
+            "Authorization": `Token ${getToken()}`
+        }
+    })
+        .then(response => response.json())
+}
 
+export const getActiveCanines = () => {
+    return fetch("http://localhost:8000/patients?canine", {
+        headers:{
+            "Authorization": `Token ${getToken()}`
+        }
+    })
+        .then(response => response.json())
+}
+
+export const getActiveFelines = () => {
+    return fetch("http://localhost:8000/patients?feline", {
+        headers:{
+            "Authorization": `Token ${getToken()}`
+        }
+    })
+        .then(response => response.json())
+}
 
 
 

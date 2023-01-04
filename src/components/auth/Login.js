@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
-import Retriever from "../assets/retrievingdog.jpeg"
+import Retriever from "../assets/trees.jpeg"
 import "./Login.css"
 
 

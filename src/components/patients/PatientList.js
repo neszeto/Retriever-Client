@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { getPatients } from "../../managers/PatientManager"
-import Record from "../assets/medical_records.webp"
+import { getActiveCanines, getActiveFelines, getPatients, getTotalActivePatients } from "../../managers/PatientManager"
+import Wave from "../assets/retrievingdog.jpeg"
 import "./PatientList.css"
 
 
 
 export const PatientList = () => {
     const [patients, setPatients] = useState([])
+    const [totalActive, setTotalActive] = useState([])
+    const [activeCanines, setActiveCanines] = useState([])
+    const [activeFelines, setActiveFelines] = useState([])
     const [filteredPatients, setFiltered] = useState([])
     const [search, setSearch] = useState("")
     const [search2, setSearch2] = useState("")
@@ -22,6 +25,9 @@ export const PatientList = () => {
             getPatients().then((patients)=> {
                 setPatients(patients)
                 setFiltered(patients)})
+            getTotalActivePatients().then(total=>setTotalActive(total))
+            getActiveCanines().then(canines=>setActiveCanines(canines))
+            getActiveFelines().then(felines=>setActiveFelines(felines))
         }, []
     )
 
@@ -96,8 +102,22 @@ export const PatientList = () => {
     return <>
     
     <section className="whole-list-page">
-    <img className="medical_record_image" src={Record} alt=""/>
+    <img className="medical_record_image" src={Wave} alt=""/>
     <div className="under_image">
+        <div className="patients_stats">
+            <div className="total_active">
+                <div className="number">{totalActive}</div>
+                <div>active patients</div>
+            </div>
+            <div className="total_active">
+                <div className="number">{activeCanines}</div>
+                <div>active canines</div>
+            </div>
+            <div className="total_active">
+                <div className="number">{activeFelines}</div>
+                <div>active felines</div>
+            </div>  
+        </div>
         <section className="new_patient_button_box">
             <button className="new_patient_button" onClick = {() => {navigate(`/newPatientForm`)}}><i class="fa-solid fa-plus fa-sm"></i> new patient</button>
         </section>
