@@ -58,12 +58,12 @@ python manage.py shell
 
 ## Demo User Login
 To view the application as a **doctor**, please sign in using the following credentials:
-* username: **sjones**
-* password: **123**
+* username: *sjones*
+* password: *123*
 
 To view the application as a **hospital manager**, please sign in using the following credentials:
-* username: **nlorrel**
-* password: **123**
+* username: *nlorrel*
+* password: *123*
 
 OR register and sign in as a new user 
 
