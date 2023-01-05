@@ -1,6 +1,6 @@
 # Retriever
 
-### *Retriever is software that allows targeted retrieval of veterinary medical records*
+### *Retriever is software that allows targeted retrieval of veterinary medical records!*
 
 ## Application Overview
 Most veterinary software systems are built in a way that makes retrieving targeted medical records tedious and time consuming. Retriever was designed to be an intuitive and targeted retrieval of medical records based on the needs of a practicing veterinarian. 
@@ -58,12 +58,12 @@ python manage.py shell
 
 ## Demo User Login
 To view the application as a **doctor**, please sign in using the following credentials:
-username: **sjones**
-password: **123**
+* username: **sjones**
+* password: **123**
 
 To view the application as a **hospital manager**, please sign in using the following credentials:
-username: **nlorrel**
-password: **123**
+* username: **nlorrel**
+* password: **123**
 
 OR register and sign in as a new user 
 
