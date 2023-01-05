@@ -28,33 +28,47 @@ This project is my fullstack capstone, the culmination of a 6 month intensive fu
 
 ## Running This Application
 
-***Disclaimer:** This application uses mock authentication for demonstration purposes. As such, the login and registration are completely insecure and would not be implemented in a professional application.*
-
+### Start Client Side
 1.  Clone this repository and change to this directory in the terminal.
 ```
-git clone git@github.com:neszeto/pupdates.git
-cd pupdates
+git clone git@github.com:neszeto/Retriever-Client.git
+cd Retriever-Client
 ```
+
 2. Start development server
 ```
 npm install --save react-router-dom
 npm start
 ```
 
-3. Clone the api repository and connect JSON
+### Start Server Side
+1. Clone the server repository and change to that directory in the terminal.
 ```
-git clone git@github.com:neszeto/pupdates-api.git
-cd pupdates-api
-json-server database.json -p 8088 -w
+git clone git@github.com:neszeto/Retriever-server.git
+cd Retriever-server
+```
+2. Start virtual environment
+```
+pipenv shell
+```
+3. Start the debugger to run server
+```
+python manage.py shell
 ```
 
 ## Demo User Login
-To view the application as a registered user, please sign in using the following email: **steve@gmail.com**
+To view the application as a **doctor**, please sign in using the following credentials:
+username: **sjones**
+password: **123**
+
+To view the application as a **hospital manager**, please sign in using the following credentials:
+username: **nlorrel**
+password: **123**
 
 OR register and sign in as a new user 
 
 ## Demo
-<a href="https://www.loom.com/share/1562df223d744ff09c7c28a156e7f367">![Demo](./README_images/demo.gif)</a>
+*In the making...please check back again!*
 
 ## ERD
 <img src="./README_images/ERD.png" />
