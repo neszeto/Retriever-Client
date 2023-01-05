@@ -47,10 +47,12 @@
     width: 19em;
     margin-left: 2%;
     background-color: rgb(207 208 208);
-    border: none; 
+    border: none;
     height: 1.7em; 
     font-family: 'Sen', sans-serif;
+    opacity: 0.5;
     border-radius: 3%;
+    
     
 }
 .search_inputs {
@@ -80,6 +82,8 @@
     display: flex;
     justify-content: center;
 }
+
+
 .patient {
     display: flex;
     justify-content: center;
@@ -142,8 +146,9 @@
     cursor: pointer;
     background-color: rgb(207 208 208);
     border-radius: 10px 0 0 10px;
-    color: rgb(141 148 157);
+    color: rgb(130, 135, 143);  
     font-family: 'Sen', sans-serif;
+    opacity: 0.5;
     
     
 }
@@ -156,7 +161,8 @@
     cursor: pointer;
     background-color: rgb(207 208 208);
     border-radius: 0 10px 10px 0;
-    color: rgb(141 148 157);
+    color: rgb(130, 135, 143);  
+    opacity: 0.5;
     
     
 }
@@ -167,8 +173,9 @@
     transition-duration: 300ms;
     cursor: pointer;
     background-color:  rgb(207 208 208);
-    color: rgb(141 148 157);  
+    color: rgb(130, 135, 143);  
     font-family: 'Sen', sans-serif;
+    opacity: 0.5;
 }
 
 .radio_buttons {

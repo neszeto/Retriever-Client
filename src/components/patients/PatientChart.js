@@ -54,7 +54,7 @@ export const PatientChart = () => {
                 </div>
                 <div className="patientInfo">
                     
-                    <div className="info_line">{patient?.breed}</div>
+                    <div className="info_line">Breed: {patient?.breed}</div>
                     <div className="info_line">Sex: {patient?.sex}</div>
                     <div className="info_line">Age: {patient?.age}yo</div>
                     <div className="info_line">Weight: {patient?.weight} lbs</div>

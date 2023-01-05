@@ -38,6 +38,10 @@
 
 }
 
+.dog_icon {
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
 
 
 
@@ -85,6 +89,10 @@
     font-weight: bold;
 }
 
+.signin_button:hover {
+    background-color: rgb(158, 233, 150);
+}
+
 .container--login {
   
     box-shadow: 5px 5px 10px rgb(20, 20, 20);
@@ -94,7 +102,7 @@
 .signin_name {
     font-family: 'Sen', sans-serif;
     font-size: 40px;
-    padding-top: 1em;
+    
    
 }
 

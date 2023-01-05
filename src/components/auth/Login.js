@@ -44,6 +44,7 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <div className="title_login">
+                        <div className="dog_icon"><i class="fa-solid fa-dog fa-xl"></i></div>
                         <div className="signin_name">Retriever</div>
                         <div className="signin_tag">Veterinary Software</div>
                         <section className="username_password">
