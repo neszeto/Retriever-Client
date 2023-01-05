@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Retriever
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### *Retriever is software that allows targeted retrieval of veterinary medical records*
 
-## Available Scripts
+## Application Overview
+Most veterinary software systems are built in a way that makes retrieving targeted medical records tedious and time consuming. Retriever was designed to be an intuitive and targeted retrieval of medical records based on the needs of a practicing veterinarian. 
 
-In the project directory, you can run:
+This project is my fullstack capstone, the culmination of a 6 month intensive full stack coding bootcamp. My goals were to explore the power of server side by incorporating complex logic on server side thereby lightening client side's responsibility, gain more experience with css by creating a website in dark mode without the use of bootstrapped components and create a seamless and intuitive user experience. 
 
-### `npm start`
+## Features
+* Doctors can create/edit/delete their own medical records and addendums
+* Hospital managers can view/activate/deactivate doctor profiles
+* All users can view all patient medical records, addendums, patient and owner information
+* All users can edit/create new patients and owners
+* All users can filter all patients by species, diagnosis, medication, patient and owner names.
+* All users can filter all patient medical records by medication and diagnosis
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Used
+<img src="./README_images/cloudinary_logo_blue_0720.png" width="100px" />
+<img src="./README_images/JavaScript.png" width="100px" height="35px"/>
+<img src="./README_images/react.png" width="100px"height="35px"/>
+<img src="./README_images/VSCode.png" width="100px"/>
+<img src="./README_images/fontawesome.webp" width="100px"/>
+<img src="./README_images/python.png" width="100px"/>
+<img src="./README_images/django.png" width="100px"/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running This Application
 
-### `npm run build`
+***Disclaimer:** This application uses mock authentication for demonstration purposes. As such, the login and registration are completely insecure and would not be implemented in a professional application.*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  Clone this repository and change to this directory in the terminal.
+```
+git clone git@github.com:neszeto/pupdates.git
+cd pupdates
+```
+2. Start development server
+```
+npm install --save react-router-dom
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Clone the api repository and connect JSON
+```
+git clone git@github.com:neszeto/pupdates-api.git
+cd pupdates-api
+json-server database.json -p 8088 -w
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo User Login
+To view the application as a registered user, please sign in using the following email: **steve@gmail.com**
 
-### `npm run eject`
+OR register and sign in as a new user 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Demo
+<a href="https://www.loom.com/share/1562df223d744ff09c7c28a156e7f367">![Demo](./README_images/demo.gif)</a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ERD
+<img src="./README_images/ERD.png" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Created By Nora Szeto 
+### View my <a href="https://www.linkedin.com/in/nora-szeto/" target="_blank">Linkedin</a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
