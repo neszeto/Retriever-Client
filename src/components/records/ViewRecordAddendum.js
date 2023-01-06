@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { createAddendum } from "../../managers/AddendumManager"
+
 import { getMedicalRecordById } from "../../managers/MedicalRecordManager"
 
 export const ViewAddendum = () => {
@@ -93,7 +93,7 @@ export const ViewAddendum = () => {
     <section className="Addendums_view">
         <div>{currentRecord?.record_addendums?.map(addendum=>{
             return <section className="single_addendum">
-                    <div>This addendum was created on {addendum.created_on}</div>
+                    <div><i>This addendum was created on {addendum.created_on}</i></div>
                     <div className="addendum-section">{addendum.addendum}</div>
                     
                 </section>

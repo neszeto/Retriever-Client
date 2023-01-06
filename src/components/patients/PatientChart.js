@@ -44,22 +44,19 @@ export const PatientChart = () => {
     return <section className="whole_page">
             <section className="pet_header_information">
                 <div className="image_name_breed">
-                    <img className="image" src={patient.image_url} width="110px" height="110px" alt=""></img>
-                    <div className="patientName">
-                        <Link className="link_chart_pet" style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
-                        <div className="arrow_deceased">{patient?.deceased ? "(deceased)": ""}</div>
-                        <div className="arrow"><span>&#8594;</span><i>{patient?.species?.species}</i></div>
-                        
-                    </div>
+                    <Link className="link_chart_pet" style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
+                    <img className="image" src={patient.image_url} width="150px" height="150px" alt=""></img>
+                    <div className="deceased_patient">{patient?.deceased ? "(deceased)": ""}</div>  
                 </div>
                 <div className="patientInfo">
                     
-                    <div className="info_line">Breed: {patient?.breed}</div>
-                    <div className="info_line">Sex: {patient?.sex}</div>
-                    <div className="info_line">Age: {patient?.age}yo</div>
-                    <div className="info_line">Weight: {patient?.weight} lbs</div>
-                    <div className="info_line">Color: {patient?.color}</div>
-                    <div className="info_line">Owner: <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
+                    <div className="info_line">{patient?.species?.species} <i class="fa-solid fa-angles-right fa-xs"></i></div>
+                    <div className="info_line"><b>Breed:</b> {patient?.breed}</div>
+                    <div className="info_line"><b>Sex:</b> {patient?.sex}</div>
+                    <div className="info_line"><b>Age:</b> {patient?.age}yo</div>
+                    <div className="info_line"><b>Weight:</b> {patient?.weight} lbs</div>
+                    <div className="info_line"><b>Color:</b> {patient?.color}</div>
+                    <div className="info_line"><b>Owner:</b> <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
                 </div>
             </section>
             <section className="border_line_container">
@@ -67,15 +64,13 @@ export const PatientChart = () => {
             </section>
             <section className="patient_chart_section">
                 <div className="patient-chart">Patient Chart</div>
-                <section className="sub_header_button">
+                {
+                    isStaff()
+                    ? ""
+                    : <button className="add_new" onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}><i class="fa-solid fa-plus fa-lg"></i></button>
                     
-                    {
-                        isStaff()
-                        ? ""
-                        : <button className="add_new" onClick={()=> navigate(`/add_new_record/patient/${patientId}`)}><i class="fa-solid fa-plus fa-sm"></i> Medical Record</button>
-                    }
-                    <button className="view_all"onClick={()=>{setFiltered(record)}}>View All Medical Records</button>
-                </section>
+                }
+                <button className="view_all"onClick={()=>{setFiltered(record)}}>View All</button>
             </section>
             <section className="patient_chart_and_summary">
             {
@@ -229,3 +224,25 @@ export const PatientChart = () => {
         </section>
     
 }
+
+
+/**            <section className="pet_header_information">
+                <div className="image_name_breed">
+                    <img className="image" src={patient.image_url} width="110px" height="110px" alt=""></img>
+                    <div className="patientName">
+                        <Link className="link_chart_pet" style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
+                        <div className="arrow_deceased">{patient?.deceased ? "(deceased)": ""}</div>
+                        <div className="arrow"><span>&#8594;</span><i>{patient?.species?.species}</i></div>
+                        
+                    </div>
+                </div>
+                <div className="patientInfo">
+                 
+                    
+                    <div className="info_line">Breed: {patient?.breed}</div>
+                    <div className="info_line">Sex: {patient?.sex}</div>
+                    <div className="info_line">Age: {patient?.age}yo</div>
+                    <div className="info_line">Weight: {patient?.weight} lbs</div>
+                    <div className="info_line">Color: {patient?.color}</div>
+                    <div className="info_line">Owner: <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
+                </div> */

@@ -5,9 +5,10 @@
 
 .retriever {
   color: white;
-  margin: 1% 0 0% 1%;
+  margin: 1.5% 0 0% 1%;
   opacity: 1;
   font-size: 15px;
+
   
 }
 .tag {
@@ -21,7 +22,7 @@
     width: 90%;
     
     position: absolute;
-    z-index: 1;
+    z-index: 2;
    
     
 }
@@ -31,6 +32,7 @@
   width: 20em;
   display: flex;
   justify-content: flex-end; 
+  
 }
 
 .nav-item {
@@ -56,6 +58,8 @@
 
 .logged_in_user {
     display: flex;
+    margin-top: -35px;
+    
 }
 /* Add a black background color to the top navigation */
 .topnav {

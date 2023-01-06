@@ -16,7 +16,7 @@ This project is my fullstack capstone, the culmination of a 6 month intensive fu
 * All users can filter all patient medical records by medication and diagnosis
 
 ## Technology Used
-<img src="./README_images/cloudinary_logo_blue_0720.png" width="100px" />
+<img src="./README_images/cloudinary_logo_blue_0720.png" width="100px" >
 <img src="./README_images/JavaScript.png" width="100px" height="35px"/>
 <img src="./README_images/react.png" width="100px"height="35px"/>
 <img src="./README_images/VSCode.png" width="100px"/>
