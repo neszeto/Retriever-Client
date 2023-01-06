@@ -1,7 +1,7 @@
 
 .whole_page {
     padding-bottom: 5%;
-    margin-top: 8%;
+    margin-top: 6%;
     
     
 }
@@ -259,7 +259,7 @@
 
 .patient_chart_section {
     display: flex;
-  
+    
     padding-bottom: 2%;
     
 }
@@ -267,7 +267,7 @@
 .view_all {
     
     margin-left: 3%; 
-    margin-top: 10%;
+    margin-top: 5%;
     font-family: 'Sen', sans-serif;
     background-color: transparent;
     border: none;
@@ -283,7 +283,8 @@
 .add_new {
   
     margin-left: 1%; 
-    margin-top: 10%;
+    margin-top: 5%;
+    height: 2em;
     font-family: 'Sen', sans-serif;
     background-color: rgb(49 54 60);
     
@@ -294,11 +295,15 @@
 }
 
 .patient-chart {
-    margin-left: 3%; 
-    margin-top: 10%;
-    font-size: 20px; 
+    margin-left: 17%; 
+    margin-top: 5%;
+    font-size: 24px; 
     color: rgb(141 148 157);
-   
+
+}
+
+.no_charts {
+    background-color: rgb(35 39 45);
 }
 
 
