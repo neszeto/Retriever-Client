@@ -54,6 +54,7 @@ export const Addendum = () => {
     let objectiveBulletPoints = currentRecord?.objective?.split(". ")
     let assessmentBulletPoints = currentRecord?.assessment?.split(". ")
     let planBulletPoints = currentRecord?.plan?.split(". ")
+    
     return <>
         <div className="back_button_container">
             <button className="back_button" onClick={()=>navigate(`/Patient/${currentRecord.patient}`)}><i class="fa-solid fa-arrow-left-long"></i> Patient Chart</button>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { activateDoctor } from "../../managers/DoctorManager"
 import { getUsers } from "../../managers/UsersManager"
 import "./DoctorList.css"

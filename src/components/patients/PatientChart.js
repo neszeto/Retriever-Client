@@ -226,23 +226,3 @@ export const PatientChart = () => {
 }
 
 
-/**            <section className="pet_header_information">
-                <div className="image_name_breed">
-                    <img className="image" src={patient.image_url} width="110px" height="110px" alt=""></img>
-                    <div className="patientName">
-                        <Link className="link_chart_pet" style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
-                        <div className="arrow_deceased">{patient?.deceased ? "(deceased)": ""}</div>
-                        <div className="arrow"><span>&#8594;</span><i>{patient?.species?.species}</i></div>
-                        
-                    </div>
-                </div>
-                <div className="patientInfo">
-                 
-                    
-                    <div className="info_line">Breed: {patient?.breed}</div>
-                    <div className="info_line">Sex: {patient?.sex}</div>
-                    <div className="info_line">Age: {patient?.age}yo</div>
-                    <div className="info_line">Weight: {patient?.weight} lbs</div>
-                    <div className="info_line">Color: {patient?.color}</div>
-                    <div className="info_line">Owner: <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
-                </div> */
