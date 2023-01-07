@@ -183,6 +183,8 @@
     
    
 }
+
+
 .border_line_container {
     display: flex; 
     justify-content: center; 
@@ -191,14 +193,14 @@
     
 }
 .border_line {
-    border-bottom: solid thin rgb(141 148 157);
+    border-bottom: solid  rgb(141 148 157);
     width: 100%;
     text-align: center; 
 }
 
 .image {
     border-radius: 50%;
-    border: solid white; 
+    border: solid rgb(141 148 157);
 }
 
 
@@ -259,8 +261,8 @@
 
 .patient_chart_section {
     display: flex;
-    
-    padding-bottom: 2%;
+  
+    padding-bottom: 0.5%;
     
 }
 

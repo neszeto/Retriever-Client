@@ -46,14 +46,13 @@ export const PatientChart = () => {
                 <div className="image_name_breed">
                     <Link className="link_chart_pet" style={{textDecoration: 'none'}} to={`/patient/${patientId}/details`}>{patient?.name}</Link>
                     <img className="image" src={patient.image_url} width="150px" height="150px" alt=""></img>
-                    <div className="deceased_patient">{patient?.deceased ? "(deceased)": ""}</div>  
                 </div>
                 <div className="patientInfo">
-                    
+                <div className="deceased_patient">{patient?.deceased ? "(deceased)": ""}</div>
                     <div className="info_line">{patient?.species?.species} <i class="fa-solid fa-angles-right fa-xs"></i></div>
                     <div className="info_line"><b>Breed:</b> {patient?.breed}</div>
                     <div className="info_line"><b>Sex:</b> {patient?.sex}</div>
-                    <div className="info_line"><b>Age:</b> {patient?.age}yo</div>
+                    <div className="info_line"><b>Age:</b> {patient?.age} yo</div>
                     <div className="info_line"><b>Weight:</b> {patient?.weight} lbs</div>
                     <div className="info_line"><b>Color:</b> {patient?.color}</div>
                     <div className="info_line"><b>Owner:</b> <Link className="link_chart_owner" style={{textDecoration: 'none'}} to={`/owner/${patient?.owner?.id}`}>{patient?.owner?.name}</Link></div>
