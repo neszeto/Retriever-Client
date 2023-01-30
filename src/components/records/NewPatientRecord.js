@@ -51,14 +51,17 @@ export const NewPatientRecord = () => {
         () => {
             if (search) {
                 const searched = medications.filter(med=>med.name.toLowerCase().startsWith(search.toLowerCase()))
-                if (searched.length === 0 && search !== "") {
-                    setAddButton(true)
-                }
                 if (searched.length === 0 && search === "") {
                     setAddButton(false)
                 }
+                if (searched.length === 0 && search !== "") {
+                    setAddButton(true)
+                }
+                
                 else {
                     setFiltered(searched)
+                    setAddButton(false)
+                    
 
                 }
                 
@@ -89,6 +92,7 @@ export const NewPatientRecord = () => {
                 if (newlyMadeMedication.name) {
                     patientMedications.current.push(newlyMadeMedication)
                     setAddedMeds(!addedMeds)
+                    
                 }
                 
             }
@@ -203,6 +207,7 @@ export const NewPatientRecord = () => {
                         () => {
                             patientMedications.current.push(medication)
                             setAddedMeds(!addedMeds)
+                            
                         }
                     }>{medication.name}</button>)}</div>
                 </div>
